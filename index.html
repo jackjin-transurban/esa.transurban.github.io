@@ -98,7 +98,7 @@
           Economics & Spatial Anlytics / Traffic Analytics Team
         </p>
         <h2>
-          Sep23 DAE demographics data shows continued return to pre-pandemic trends
+          Sep23 DAE Demographics Update: Nearing Pre-Pandemic Patterns
         </h2>
         <p> by Jack Jin<br>
           <b>Published</b> 6 Apr 2024
@@ -346,7 +346,8 @@
           progress: true
         })
         .onStepEnter(response => {
-          var chapter = config.chapters.find(chap => chap.id === response.element.id);
+	
+          var chapter = config.chapters.find(chap => chap.id === response.element.id);	  		  
 
           // if mobile, adjust map zoom
           chapter.location.zoom = window.innerWidth < 960 ? chapter.location.zoom - 1.5 : chapter.location.zoom;
@@ -359,6 +360,9 @@
           if (chapter.onChapterEnter.length > 0) {
             chapter.onChapterEnter.forEach(setLayerOpacity);
           }
+		   
+		 
+		   
 		  if (chapter.rotateAnimation) {
 						map.once('moveend', function() {
 								const rotateNumber = map.getBearing();
@@ -375,11 +379,12 @@
           response.element.classList.remove('active');
           if (chapter.onChapterExit.length > 0) {
             chapter.onChapterExit.forEach(setLayerOpacity);
-          }
-        });
-    });
-
-    // setup resize event
+          }	  	  
+        });				
+		
+    });      	
+		
+	// setup resize event
     window.addEventListener('resize', scroller.resize);
 
   </script>

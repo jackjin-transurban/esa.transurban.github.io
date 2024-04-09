@@ -157,6 +157,10 @@ button:focus {
   margin-bottom: 16px;
 }
 
+.step .highlight {
+  color: red;  
+}
+
 .step .image-block img {
   width: 100%;
 }
