@@ -322,7 +322,7 @@ var config = {
             description: `
 			<p>In 2021, Melbourne's population reached <b>4.98 million</b>.</p>
 			<p>The population distribution at the SA2 level within Melbourne Metro in 2021 was relatively balanced. This uniformity is attributed to the <a href="https://www.abs.gov.au/census/guide-census-data/geography/census-geography-glossary#:~:text=Statistical%20Area%20Level%202%20(SA2),-Statistical%20Areas%20Level&text=They%20generally%20have%20a%20population,and%20catchments%20of%20rural%20areas.">SA2 boundaries being designed to encompass populations ranging from 3,000 to 25,000</a>.</p>
-			<p>For a more detailed breakdown, users are encouraged to consult the <a href="https://tableau.transurban.com/#/site/StrategyandAnalysis/workbooks/4201/views.">Sep23 DAE commission forecast</a>, which offers an in-depth view of Sydney's population distribution.</p>
+			<p>For a more detailed breakdown, users are encouraged to consult the <a href="https://tableau.transurban.com/#/site/StrategyandAnalysis/workbooks/4201/views.">Sep23 DAE commission forecast</a>, which offers an in-depth view of Melbourne's population distribution.</p>
 			<img src="assets/img/chapters/pop21.svg" width = "200" ></div>
 			`,
              location: {
@@ -481,7 +481,7 @@ var config = {
             description: `
 			<p>In 2021, the population of South East Queensland (SEQ) reached <b>3.78 million</b>.</p>
 			<p>The population distribution at the SA2 level within SEQ in 2021 was relatively balanced. This uniformity is attributed to the  <a href="https://www.abs.gov.au/census/guide-census-data/geography/census-geography-glossary#:~:text=Statistical%20Area%20Level%202%20(SA2),-Statistical%20Areas%20Level&text=They%20generally%20have%20a%20population,and%20catchments%20of%20rural%20areas.">SA2 boundaries being designed to encompass populations ranging from 3,000 to 25,000.</a>.</p>
-			<p> For a more detailed breakdown, users are encouraged to consult the <a href="https://tableau.transurban.com/#/site/StrategyandAnalysis/workbooks/4201/views.">Sep23 DAE commission forecast</a>, which offers an in-depth view of Sydney's population distribution.</p>
+			<p> For a more detailed breakdown, users are encouraged to consult the <a href="https://tableau.transurban.com/#/site/StrategyandAnalysis/workbooks/4201/views.">Sep23 DAE commission forecast</a>, which offers an in-depth view of Brisbane's population distribution.</p>
 			<img src="assets/img/chapters/pop21.svg" width = "200"></div>			
 			`,
 			location: {
