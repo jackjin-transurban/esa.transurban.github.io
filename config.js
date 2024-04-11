@@ -16,8 +16,8 @@ var config = {
 			<p> This analysis is informed by insights from Pete's newsletter: <a href="https://trafficteam.substack.com/p/our-latest-demographics-data-shows/"><b>Our latest demographics data shows continued return to pre-pandemic trends</b></a>. 
 			`,
             location: {
-                center: [151.20, -33.86],
-                zoom: 11,
+                center: [150.9, -33.86],
+                zoom: 10.5,
                 pitch: 0,
                 bearing: 0,
 				speed: 0.8
@@ -67,8 +67,8 @@ var config = {
 			<ol>	<li> What is the pace of population growth in our key expansion areas? </li>	<li> Which industrial zones are experiencing the most rapid growth? </li>	<li> In what ways are employment categories evolving within our central business districts? </li>		<li> What is the Gross Domestic Product in specific regions of our city? </li>	<li> How is new development projects (i.e. Badgerys Creek) expected to influence local population and job growth? </li> </p>
 			`,
             location: {
-                center: [144.9, -37.80],
-                zoom: 11,
+                center: [144.8, -37.80],
+                zoom: 10.5,
                 pitch: 0,
                 bearing: 0,
 				speed: 0.8
@@ -119,8 +119,8 @@ var config = {
 			<p>Before we delve into this comparative analysis, let's first explore the <b>demographics and employment centers</b> and pinpoint the <b>primary areas of growth</b>.</p>
 			`,
             location: {
-                center: [153.026, -27.4705],
-                zoom: 11,
+                center: [152.926, -27.5205],
+                zoom: 10.5,
                 pitch: 0,
                 bearing: 0,
 				speed: 0.8
@@ -172,8 +172,8 @@ var config = {
 			<img src="assets/img/chapters/pop21.svg" width = "200"></div>
 			`,
             location: {
-                center: [151.10, -33.86],
-				zoom: 11,
+                center: [150.9, -33.86],
+                zoom: 10.5,
                 pitch: 0,
                 bearing: 0,
 				speed: 0.8
@@ -224,8 +224,8 @@ var config = {
 				<p>In terms of infill development, the focal SA2 area is "Wentworth Point - Sydney Olympic Park." This location is recognized as a crucial site for medium and high-density residential development, aligning with the state's strategic planning initiatives. </p>
 				`,
             location: {
-                center: [151.10, -33.86],
-				zoom: 11,
+                center: [150.9, -33.86],
+                zoom: 10.5,
                 pitch: 0,
                 bearing: 0,
 				speed: 0.8
@@ -275,8 +275,8 @@ var config = {
 			<img src="assets/img/chapters/pop.svg" width = "200"></div>
 			`,
             location: {
-                center: [151.10, -33.86],
-				zoom: 11,
+                center: [150.9, -33.86],
+                zoom: 10.5,
                 pitch: 60,
                 bearing: 0,
 				speed: 0.8
@@ -326,8 +326,8 @@ var config = {
 			<img src="assets/img/chapters/pop21.svg" width = "200" ></div>
 			`,
              location: {
-                center: [144.9, -37.80],
-                zoom: 11,
+                center: [144.8, -37.80],
+                zoom: 10.5,
                 pitch: 0,
                 bearing: 0,
 				speed: 0.8
@@ -379,8 +379,8 @@ var config = {
 			<p>Additionally, certain SA2s, such as <b>"Cranbourne South"</b> and <b>"Beaconsfield - Officer"</b> are also identified as key zones for greenfield residential growth.</p>
 			`,
            location: {
-                center: [144.9, -37.80],
-                zoom: 11,
+                center: [144.8, -37.80],
+                zoom: 10.5,
                 pitch: 0,
                 bearing: 0,
 				speed: 0.8
@@ -432,8 +432,8 @@ var config = {
 			<img src="assets/img/chapters/pop.svg" width = "200"></div>
 			`,
             location: {
-                center: [144.9, -37.80],
-                zoom: 11,
+                center: [144.8, -37.80],
+                zoom: 10.5,
                 pitch: 60,
                 bearing: 0,
 				speed: 0.8
@@ -485,8 +485,8 @@ var config = {
 			<img src="assets/img/chapters/pop21.svg" width = "200"></div>			
 			`,
 			location: {
-                center: [153.026, -27.4705],
-                zoom: 11,
+                center: [152.926, -27.5205],
+                zoom: 10.5,
                 pitch: 0,
                 bearing: 0,
 				speed: 0.8
@@ -539,8 +539,8 @@ var config = {
 			<p>Within the Brisbane Local Government Area (LGA), several SA2s such as <b>"Rochedale"</b>, <b>"Pallara - Willawong"</b> and <b>"Collingwood Park - Redbank"</b> are also projected to undergo substantial greenfield residential growth.</p>			
 			`,
             location: {
-                center: [153.026, -27.4705],
-                zoom: 11,
+                center: [152.926, -27.5205],
+                zoom: 10.5,
                 pitch: 0,
                 bearing: 0,
 				speed: 0.8
@@ -594,8 +594,8 @@ var config = {
 			<p>For detailed information on key development hubs within South East Queensland, please refer to <a href="https://planning.statedevelopment.qld.gov.au/__data/assets/pdf_file/0019/83242/seq-regional-plan-shapingseq-update-2023-high-res.pdf"> Shaping SEQ</a> document.</p>
 			`,
             location: {
-                center: [153.026, -27.4705],
-                zoom: 11,
+                center: [152.926, -27.5205],
+                zoom: 10.5,
                 pitch: 60,
                 bearing: 0,
 				speed: 0.8
@@ -647,8 +647,8 @@ var config = {
 			<p>Moreover, the <b>top 10</b> SA2s, which include areas like "<b>North Sydney - Lavender Bay</b>", "<b>Sydney (South) - Haymarket</b>", "<b>Macquarie Park - Marsfield</b>" and "<b>Parramatta - North</b>", collectively comprised <span class = "highlight"> <b>36%</b> </span> of Sydney's total employment.</p>
 			`,
             location: {
-                center: [151.10, -33.86],
-				zoom: 11,
+                center: [150.9, -33.86],
+                zoom: 10.5,
                 pitch: 0,
                 bearing: 0,
 				speed: 0.8
@@ -698,8 +698,8 @@ var config = {
 			<p>Additionally, the construction of Sydney's secondary airport and the development of the <a href="https://www.planning.nsw.gov.au/plans-for-your-area/priority-growth-areas-and-precincts/western-sydney-aerotropolis"> <b>Western Sydney Aerotropolis</b></a> are set to catalyze job growth in western Sydney SA2s,including <b>"Austral - Greendale"</b>,<b>"Badgerys Creek"</b> and <b>"Penrith"</b>. </p>
 			`,
             location: {
-                center: [151.10, -33.86],
-				zoom: 11,
+                center: [150.9, -33.86],
+                zoom: 10.5,
                 pitch: 0,
                 bearing: 0,
 				speed: 0.8
@@ -749,8 +749,8 @@ var config = {
 			<img src="assets/img/chapters/emp.svg" width = "200"></div>
 			`,
             location: {
-                center: [151.10, -33.86],
-				zoom: 11,
+                center: [150.9, -33.86],
+                zoom: 10.5,
                 pitch: 60,
                 bearing: 0,
 				speed: 0.8
@@ -800,8 +800,8 @@ var config = {
 			<p>Additionally, the top 10 SA2 areas, which include "<b>Docklands</b>", "<b>Dandenong - South</b>", "<b>Parkville</b>" and "<b>Port Melbourne Industrial</b>", collectively contributed to <span class = "highlight"><b>27%</b></span> of Melbourne's total employment.</p>
 			`,
              location: {
-                center: [144.9, -37.80],
-                zoom: 11,
+                center: [144.8, -37.80],
+                zoom: 10.5,
                 pitch: 0,
                 bearing: 0,
 				speed: 0.8
@@ -853,8 +853,8 @@ var config = {
 			<p>Unlike Sydney, Greater Melbourne does not have greenfield job hubs akin to the Sydney Aerotropolis. Instead, job growth within the "<b>Melbourne Inner</b>" SA4 is significant, accounting for <span class="highlight"><b>36%</b></span> of the city's total projected employment growth.</p>
 			`,
            location: {
-                center: [144.9, -37.80],
-                zoom: 11,
+                center: [144.8, -37.80],
+                zoom: 10.5,
                 pitch: 0,
                 bearing: 0,
 				speed: 0.8
@@ -906,8 +906,8 @@ var config = {
 			<img src="assets/img/chapters/emp.svg" width = "200"></div>
 			`,
             location: {
-                center: [144.9, -37.80],
-                zoom: 11,
+                center: [144.8, -37.80],
+                zoom: 10.5,
                 pitch: 60,
                 bearing: 0,
 				speed: 0.8
@@ -959,8 +959,8 @@ var config = {
 			<p>Furthermore, the top 10 SA2s, which include "<b>South Brisbane</b>", "<b>Rocklea - Acacia Ridge</b>", "<b>Fortitude valley</b>", "<b>Brisbane Airport</b>", "<b>Newstead - Bowen Hills</b>" collectively comprised <span class="highlight"> <b>22.3%</b> </span> of Greater Brisbane's total employment.</p>
 			`,
             location: {
-                center: [153.026, -27.4705],
-                zoom: 11,
+                center: [152.926, -27.5205],
+                zoom: 10.5,
                 pitch: 0,
                 bearing: 0,
 				speed: 0.8
@@ -1012,8 +1012,8 @@ var config = {
 			<p>Unlike Sydney with its Aerotropolis, SEQ does not have comparable greenfield job hubs. However, the "<b>Brisbane Inner City</b>" SA4 is a significant area of growth, projected to contribute to <span class="highlight"><b>25%</b></span> of the region's total job increase.</p>
 			`,
             location: {
-                center: [153.026, -27.4705],
-                zoom: 11,
+                center: [152.926, -27.5205],
+                zoom: 10.5,
                 pitch: 0,
                 bearing: 0,
 				speed: 0.8
@@ -1065,8 +1065,8 @@ var config = {
 			<img src="assets/img/chapters/emp.svg" width = "200" height = "200"></div>
 			`,
             location: {
-                center: [153.026, -27.4705],
-                zoom: 11,
+                center: [152.926, -27.5205],
+                zoom: 10.5,
                 pitch: 60,
                 bearing: 0,
 				speed: 0.8
@@ -1117,8 +1117,8 @@ var config = {
 			<p>Conversely, Sydney and Melbourne are poised for substantial infill development in their middle suburbs. This trend leverages their robust public transport systems, urban-centric lifestyle amenities, and a more entrenched acceptance of denser living environments.</p>			
 			`,
             location: {
-                center: [151.10, -33.86],
-                zoom: 11,
+                center: [150.9, -33.86],
+                zoom: 10.5,
                 pitch: 0,
                 bearing: 0,
 				speed: 0.8
