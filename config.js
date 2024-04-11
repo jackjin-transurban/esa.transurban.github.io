@@ -373,7 +373,7 @@ var config = {
             id: 'section-8',
 			title: '2041 Melbourne Population Forecast',
             description: `
-			<p>By 2041, Melbourne's population is expected to reach approximately <b>9.0 million</b>.</p>
+			<p>By 2041, Melbourne's population is expected to reach approximately <b>7.0 million</b>.</p>
 			<p>The forecast for 2041 highlights substantial growth in <a href="https://vpa-web.s3.amazonaws.com/wp-content/uploads/2012/11/North-Growth-Corridor-Plan.pdf">North Melbourne</a> and <a href="https://vpa-web.s3.amazonaws.com/wp-content/uploads/2012/11/West-Growth-Corridor-Plan.pdf">West South </a>, areas known for extensive greenfield residential developments.</p> 
 			<img src="assets/img/chapters/pop41.svg" width = "200" height = "200"></div>
 			<p>Additionally, certain SA2s, such as <b>"Cranbourne South"</b> and <b>"Beaconsfield - Officer"</b> are also identified as key zones for greenfield residential growth.</p>
