@@ -114,7 +114,7 @@ var config = {
             id: 'section-3',
 			title: 'What Insights Does the Sep23 Forecast Provide?',
             description: `
-			<p>ur focus is on the comprehensive population projections for Sydney, Melbourne, and Brisbane, spanning <b>from 2021 to 2041</b>, as outlined in the annual DAE forecasts. A crucial aspect of our analysis is to compare different versions of these forecasts to identify any significant upgrades or downgrades in our city projections, which could subsequently influence our asset strategies. </p>
+			<p>Our focus is on the comprehensive population projections for Sydney, Melbourne, and Brisbane, spanning <b>from 2021 to 2041</b>, as outlined in the annual DAE forecasts. A crucial aspect of our analysis is to compare different versions of these forecasts to identify any significant upgrades or downgrades in our city projections, which could subsequently influence our asset strategies. </p>
 			<p>A prevalent inquiry pertains to the recovery trajectory post-pandemic: Are we aligning back to the pre-pandemic growth trends? To address this, we'll juxtapose the <b>Sep23</b> forecast with the <b>Sep19</b> data.</p>
 			<p>Before we delve into this comparative analysis, let's first explore the <b>demographics and employment centers</b> and pinpoint the <b>primary areas of growth</b>.</p>
 			`,
@@ -167,8 +167,8 @@ var config = {
             title: '2021 Sydney Population Overview',
             description: `
 			<p>In 2021, Sydney's population reached <b>5.26 million</b>.</p>
-			<p>The population distribution at the SA2 level within Sydney Metro in 2021 was relatively balanced. This uniformity is attributed to the <a href="https://www.abs.gov.au/census/guide-census-data/geography/census-geography-glossary#:~:text=Statistical%20Area%20Level%202%20(SA2),-Statistical%20Areas%20Level&text=They%20generally%20have%20a%20population,and%20catchments%20of%20rural%20areas.">SA2 boundaries being designed to encompass populations ranging from 3,000 to 25,000</a>.</p>
-			<p> For a more detailed breakdown, users are encouraged to consult the <a href:"https://www.abs.gov.au/census/guide-census-data/geography/census-geography-glossary#:~:text=Statistical%20Area%20Level%202%20(SA2),-Statistical%20Areas%20Level&text=They%20generally%20have%20a%20population,and%20catchments%20of%20rural%20areas.">Sep23 DAE commission forecast</a>, which offers an in-depth view of Sydney's population distribution.</p>
+			<p>The population distribution at the SA2 level within Sydney Metro in 2021 was relatively balanced. This uniformity is attributed to the <a href="https://www.abs.gov.au/census/guide-census-data/geography/census-geography-glossary#:~:text=Statistical%20Area%20Level%202%20(SA2),-Statistical%20Areas%20Level&text=They%20generally%20have%20a%20population,and%20catchments%20of%20rural%20areas">SA2 boundaries being designed to encompass populations ranging from 3,000 to 25,000</a>.</p>
+			<p>For a more detailed breakdown, users are encouraged to consult the <a href="https://tableau.transurban.com/#/site/StrategyandAnalysis/workbooks/4201/views">Sep23 DAE commission forecast</a>, which offers an in-depth view of Sydney's population distribution.</p>
 			<img src="assets/img/chapters/pop21.svg" width = "200"></div>
 			`,
             location: {
@@ -219,7 +219,7 @@ var config = {
             description: 
 				`
 				<p>By 2041, Sydney's population is projected to reach approximately <b>6.94 million</b>.</p>
-				<p>This forecast indicates significant growth particularly in Sydney's <a href:"https://www.planning.nsw.gov.au/plans-for-your-area/priority-growth-areas-and-precincts/north-west-growth-area">North West</a> and <a href: "https://www.planning.nsw.gov.au/plans-for-your-area/priority-growth-areas-and-precincts/south-west-growth-area">South West</a> regions, which are identified as primary greenfield residential development areas. </p> 
+				<p>This forecast indicates significant growth particularly in Sydney's <a href="https://www.planning.nsw.gov.au/plans-for-your-area/priority-growth-areas-and-precincts/north-west-growth-area">North West</a> and <a href= "https://www.planning.nsw.gov.au/plans-for-your-area/priority-growth-areas-and-precincts/south-west-growth-area">South West</a> regions, which are identified as primary greenfield residential development areas. </p> 
 				<img src="assets/img/chapters/pop41.svg" width = "200" height = "200"></div>
 				<p>In terms of infill development, the focal SA2 area is "Wentworth Point - Sydney Olympic Park." This location is recognized as a crucial site for medium and high-density residential development, aligning with the state's strategic planning initiatives. </p>
 				`,
@@ -322,7 +322,7 @@ var config = {
             description: `
 			<p>In 2021, Melbourne's population reached <b>4.98 million</b>.</p>
 			<p>The population distribution at the SA2 level within Melbourne Metro in 2021 was relatively balanced. This uniformity is attributed to the <a href="https://www.abs.gov.au/census/guide-census-data/geography/census-geography-glossary#:~:text=Statistical%20Area%20Level%202%20(SA2),-Statistical%20Areas%20Level&text=They%20generally%20have%20a%20population,and%20catchments%20of%20rural%20areas.">SA2 boundaries being designed to encompass populations ranging from 3,000 to 25,000</a>.</p>
-			<p> For a more detailed breakdown, users are encouraged to consult the <a href:"https://www.abs.gov.au/census/guide-census-data/geography/census-geography-glossary#:~:text=Statistical%20Area%20Level%202%20(SA2),-Statistical%20Areas%20Level&text=They%20generally%20have%20a%20population,and%20catchments%20of%20rural%20areas.">Sep23 DAE commission forecast</a>, which offers an in-depth view of Sydney's population distribution.</p>
+			<p>For a more detailed breakdown, users are encouraged to consult the <a href="https://tableau.transurban.com/#/site/StrategyandAnalysis/workbooks/4201/views.">Sep23 DAE commission forecast</a>, which offers an in-depth view of Sydney's population distribution.</p>
 			<img src="assets/img/chapters/pop21.svg" width = "200" ></div>
 			`,
              location: {
@@ -374,7 +374,7 @@ var config = {
 			title: '2041 Melbourne Population Forecast',
             description: `
 			<p>By 2041, Melbourne's population is expected to reach approximately <b>9.0 million</b>.</p>
-			<p>The forecast for 2041 highlights substantial growth in <a href:"https://vpa-web.s3.amazonaws.com/wp-content/uploads/2012/11/North-Growth-Corridor-Plan.pdf">North Melbourne</a> and <a href: "https://vpa-web.s3.amazonaws.com/wp-content/uploads/2012/11/West-Growth-Corridor-Plan.pdf">West South </a>, areas known for extensive greenfield residential developments.</p> 
+			<p>The forecast for 2041 highlights substantial growth in <a href="https://vpa-web.s3.amazonaws.com/wp-content/uploads/2012/11/North-Growth-Corridor-Plan.pdf">North Melbourne</a> and <a href="https://vpa-web.s3.amazonaws.com/wp-content/uploads/2012/11/West-Growth-Corridor-Plan.pdf">West South </a>, areas known for extensive greenfield residential developments.</p> 
 			<img src="assets/img/chapters/pop41.svg" width = "200" height = "200"></div>
 			<p>Additionally, certain SA2s, such as <b>"Cranbourne South"</b> and <b>"Beaconsfield - Officer"</b> are also identified as key zones for greenfield residential growth.</p>
 			`,
@@ -481,7 +481,7 @@ var config = {
             description: `
 			<p>In 2021, the population of South East Queensland (SEQ) reached <b>3.78 million</b>.</p>
 			<p>The population distribution at the SA2 level within SEQ in 2021 was relatively balanced. This uniformity is attributed to the  <a href="https://www.abs.gov.au/census/guide-census-data/geography/census-geography-glossary#:~:text=Statistical%20Area%20Level%202%20(SA2),-Statistical%20Areas%20Level&text=They%20generally%20have%20a%20population,and%20catchments%20of%20rural%20areas.">SA2 boundaries being designed to encompass populations ranging from 3,000 to 25,000.</a>.</p>
-			<p> For a more detailed breakdown, users are encouraged to consult the <a href:"https://www.abs.gov.au/census/guide-census-data/geography/census-geography-glossary#:~:text=Statistical%20Area%20Level%202%20(SA2),-Statistical%20Areas%20Level&text=They%20generally%20have%20a%20population,and%20catchments%20of%20rural%20areas.">Sep23 DAE commission forecast</a>, which offers an in-depth view of Sydney's population distribution.</p>
+			<p> For a more detailed breakdown, users are encouraged to consult the <a href="https://tableau.transurban.com/#/site/StrategyandAnalysis/workbooks/4201/views.">Sep23 DAE commission forecast</a>, which offers an in-depth view of Sydney's population distribution.</p>
 			<img src="assets/img/chapters/pop21.svg" width = "200"></div>			
 			`,
 			location: {
@@ -534,7 +534,7 @@ var config = {
             description: 
 			`
 			<p>By 2041, the population of South East Queensland (SEQ) is expected to reach approximately <b>5.36 million</b>.</p>
-			<p>The 2041 forecast highlights significant growth in specific areas: Ipswich, espetially <a href:"https://www.statedevelopment.qld.gov.au/__data/assets/pdf_file/0019/12448/ripley-valley-development-scheme.pdf"> Ripley Valley</a>, Logan, especially <a href: "https://ehq-production-australia.s3.ap-southeast-2.amazonaws.com/626be8a07ab1dff7a6527537ebd4c6d9dd2269ed/documents/attachments/000/096/927/original/Draft_Park_Ridge_South_Chambers_Flat_Plan_Consultation_Booklet.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4KKNQAKIOR7VAOP4%2F20240408%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20240408T040645Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=797d0a933e8de452449565d1442d0909faa87fd82afa37fd37d250b3bc70ab37"> Park Ridge and Chambers Flat</a>, along with <a href:"https://communities.lendlease.com/contentassets/c60d7ad02f5e4358aadc17100206c06c/yar_mp_230322web_3-page.pdf"> Yarrabilba </a>, and in <a href:<https://www.moretonbay.qld.gov.au/files/assets/public/v/1/services/building-development/mbrc-plan/background-studies/cabwest-structure-plan-summary.pdf> Calboolture West </a>, which are all earmarked for extensive greenfield residential developments.</p> 
+			<p>The 2041 forecast highlights significant growth in specific areas: Ipswich, espetially <a href="https://www.statedevelopment.qld.gov.au/__data/assets/pdf_file/0019/12448/ripley-valley-development-scheme.pdf"> Ripley Valley</a>, Logan, especially <a href= "https://ehq-production-australia.s3.ap-southeast-2.amazonaws.com/626be8a07ab1dff7a6527537ebd4c6d9dd2269ed/documents/attachments/000/096/927/original/Draft_Park_Ridge_South_Chambers_Flat_Plan_Consultation_Booklet.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4KKNQAKIOR7VAOP4%2F20240411%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20240411T105608Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=a4b6fc4942130f0de86bd12f9daf0e4da0ec384efd3b2f531edce52b10d720b6"> Park Ridge and Chambers Flat</a>, along with <a href="https://communities.lendlease.com/contentassets/c60d7ad02f5e4358aadc17100206c06c/yar_mp_230322web_3-page.pdf"> Yarrabilba </a>, and in <a href="https://www.moretonbay.qld.gov.au/files/assets/public/v/1/services/building-development/mbrc-plan/background-studies/cabwest-structure-plan-summary.pdf"> Calboolture West</a>, which are all earmarked for extensive greenfield residential developments.</p> 
 			<img src="assets/img/chapters/pop41.svg" width = "200" height = "200"></div>
 			<p>Within the Brisbane Local Government Area (LGA), several SA2s such as <b>"Rochedale"</b>, <b>"Pallara - Willawong"</b> and <b>"Collingwood Park - Redbank"</b> are also projected to undergo substantial greenfield residential growth.</p>			
 			`,
@@ -591,7 +591,7 @@ var config = {
 			<img src="assets/img/chapters/qld_pop.svg" width = "500"></div>
 			<p>This growth aligns closely with previous DAE forecasts, indicating stable and predictable development trends.</p>
 			<img src="assets/img/chapters/pop.svg" width = "200"></div>
-			<p>For detailed information on key development hubs within South East Queensland, please refer to <a <href:"https://planning.statedevelopment.qld.gov.au/__data/assets/pdf_file/0019/83242/seq-regional-plan-shapingseq-update-2023-high-res.pdf"> Shaping SEQ</a> document.</p>
+			<p>For detailed information on key development hubs within South East Queensland, please refer to <a href="https://planning.statedevelopment.qld.gov.au/__data/assets/pdf_file/0019/83242/seq-regional-plan-shapingseq-update-2023-high-res.pdf"> Shaping SEQ</a> document.</p>
 			`,
             location: {
                 center: [153.026, -27.4705],
@@ -695,7 +695,7 @@ var config = {
 			<p>By 2041, employment in Sydney is projected to reach approximately <b>3.62 million</b>.</p>
 			<p>The anticipated job growth aligns with the current distribution, where traditional places of work (POW SA2s) are expected to expand. Notable areas like Sydney CBD's <b>"Sydney - Millers Point"</b>, <b>"Macquarie Park - Marsfield"</b> and <b>"Parramatta - North"</b> are forecasted to experience significant employment increases. </p> 
 			<img src="assets/img/chapters/emp41.svg" width = "200" height = "200"></div>
-			<p>Additionally, the construction of Sydney's secondary airport and the development of the <a href:"https://www.planning.nsw.gov.au/plans-for-your-area/priority-growth-areas-and-precincts/western-sydney-aerotropolis"> <b>Western Sydney Aerotropolis</b></a> are set to catalyze job growth in western Sydney SA2s,including <b>"Austral - Greendale"</b>,<b>"Badgerys Creek"</b> and <b>"Penrith"</b>. </p>
+			<p>Additionally, the construction of Sydney's secondary airport and the development of the <a href="https://www.planning.nsw.gov.au/plans-for-your-area/priority-growth-areas-and-precincts/western-sydney-aerotropolis"> <b>Western Sydney Aerotropolis</b></a> are set to catalyze job growth in western Sydney SA2s,including <b>"Austral - Greendale"</b>,<b>"Badgerys Creek"</b> and <b>"Penrith"</b>. </p>
 			`,
             location: {
                 center: [151.10, -33.86],
@@ -1009,7 +1009,7 @@ var config = {
 			<p>By 2041, employment in South East Queensland (SEQ) is projected to reach approximately <b>2.71 million</b>.</p>
 			<p>The anticipated job growth is expected to align with current trends, with traditional places of work (POW) SA2s, such as "<b>Brisbane CBD</b>" and "<b>South Brisbane</b>", "<b>Kelvin Grove - Herston</b>" and "<b>Woolloongabba</b>" seeing an increase in employment opportunities. </p> 
 			<img src="assets/img/chapters/emp41.svg" width = "200"></div>
-			<p>Unlike Sydney with its Aerotropolis, SEQ does not have comparable greenfield job hubs. However, the "<b>Brisbane Inner City</b>" SA4 is a significant area of growth, projected to contribute to <span class="highlight"><b>25%</b></span> of the region's total job increase..</p>
+			<p>Unlike Sydney with its Aerotropolis, SEQ does not have comparable greenfield job hubs. However, the "<b>Brisbane Inner City</b>" SA4 is a significant area of growth, projected to contribute to <span class="highlight"><b>25%</b></span> of the region's total job increase.</p>
 			`,
             location: {
                 center: [153.026, -27.4705],
