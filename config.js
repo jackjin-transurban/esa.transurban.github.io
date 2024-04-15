@@ -17,7 +17,7 @@ var config = {
 			`,
             location: {
                 center: [150.9, -33.86],
-                zoom: 10.5,
+                zoom: 5,
                 pitch: 0,
                 bearing: 0,
 				speed: 0.8
@@ -67,8 +67,8 @@ var config = {
 			<ol>	<li> What is the pace of population growth in our key expansion areas? </li>	<li> Which industrial zones are experiencing the most rapid growth? </li>	<li> In what ways are employment categories evolving within our central business districts? </li>		<li> What is the Gross Domestic Product in specific regions of our city? </li>	<li> How is new development projects (i.e. Badgerys Creek) expected to influence local population and job growth? </li> </p>
 			`,
             location: {
-                center: [144.8, -37.80],
-                zoom: 10.5,
+                center: [150.9, -33.86],
+                zoom: 7,
                 pitch: 0,
                 bearing: 0,
 				speed: 0.8
@@ -119,8 +119,8 @@ var config = {
 			<p>Before we delve into this comparative analysis, let's first explore the <b>demographics and employment centers</b> and pinpoint the <b>primary areas of growth</b>.</p>
 			`,
             location: {
-                center: [152.926, -27.5205],
-                zoom: 10.5,
+                center: [150.9, -33.86],
+                zoom: 9,
                 pitch: 0,
                 bearing: 0,
 				speed: 0.8
