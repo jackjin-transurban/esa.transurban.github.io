@@ -1,0 +1,171 @@
+* {
+    font-family: "Microsoft YaHei";
+}
+.CodeMirror * {
+    font-family: sans-serif;
+}
+html {
+    background-color: rgb(230, 230, 230);
+}
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgb(230, 230, 230);
+}
+body p {
+    line-height: 2;
+}
+
+blockquote {
+    border-width:0;
+    margin-bottom:10px;
+}
+.marketing .feature .col-lg-4 img {
+    margin-bottom: 10px;
+}
+.marketing .thx .col-lg-4 {
+    margin-bottom: 0;
+    text-align:left;
+}
+.thx blockquote p {
+    text-align:left;
+    margin-bottom:0;
+}
+.thx blockquote small {
+    text-align:right;
+}
+.thx div {
+    padding:0;
+}
+div.user {
+    margin-top: 30px;
+}
+.user img {
+    height:50px;
+    padding: 5px;
+    margin: 15px 3px;
+    border: 1px solid #ddd;
+    opacity: .75;
+}
+.user a:hover img {
+  opacity: 1;
+  border: 1px solid #ccc;
+}
+
+.featurette {
+    padding:50px 0;
+    border-top: 1px solid #ddd;
+}
+.featurette-heading {
+    margin-top: 0px
+}
+img {
+    max-width: 100%;
+}
+
+hr {
+    border-color: #ddd;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+.jumbotron {
+    margin: 0;
+    text-align: center;
+    background-color:transparent;
+  }
+  .jumbotron h1 {
+    font-size: 100px;
+    line-height: 1;
+  }
+  .jumbotron .lead {
+    font-size: 24px;
+    line-height: 1.25;
+  }
+  .jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+.team {
+    padding-bottom:0;
+}
+.team .row {
+    margin-bottom: 40px;
+}
+.team i {
+    font-size:12px;
+}
+
+.e-list dt {
+    float: left;
+    clear: left;
+    width: 60px;
+}
+.e-list dd {
+    float: left;
+    clear: right;
+    color: #666;
+}
+
+.dropdown i {
+    color:#555;
+}
+.nav ul.dropdown-menu{
+    min-width : 0;
+}
+.dropdown-menu > li > a {
+    padding: 3px 10px;
+}
+
+#doc h3 a,#doc h4 a,#doc h5 a{
+    display:inline-block;
+    padding-top:20px;
+}
+table.full {width:100%;}
+.ADoc_table { border-collapse: collapse; margin-bottom:15px; }
+
+.ADoc_table th, .ADoc_table td {
+    border:1px solid rgb(23,53,81);
+    padding: 3px;
+    color:#222;
+}
+
+.ADoc_table th {
+    border-bottom:2px solid rgb(23,53,81);
+    background:rgb(37,78,117);
+    color:#fff;
+    text-align:center;
+}
+.bgRed {
+    background:rgb(255,230,230);
+}
+.bgGreen {
+    background:rgb(230,255,230);
+}
+.bgBlue {
+    background:rgb(210,230,255);
+}
+
+.prettyprint {
+  margin-top: 8px;
+}
+.prettyprint xmp{
+  margin: 0px;
+  padding: 10px;
+}
+.prettyprint .pln {
+  line-height: 0px;
+}
+
+.ec-icon {
+    display: inline-block;
+    width: 35px;
+    height: 25px;
+    *margin-right: .3em;
+    line-height: 25px;
+    vertical-align: middle;
+    background-image: url("../img/icon-bar.png");
+    background-repeat: no-repeat;
+}

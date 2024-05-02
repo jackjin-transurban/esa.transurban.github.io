@@ -1,394 +1,214 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ECharts">
+    <meta name="author" content="jjin@transurban.com">   
 
-<head>
-  <meta charset='utf-8' />
-  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-  
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119672452-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-119672452-1');
-  </script>
-
-  <!-- Favicons -->
-  <link rel="icon" type="image/x-icon" href="./assets/favicons/favicon.ico">
-  <!-- end of Favicons -->
-
-  <!-- styles -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
-  <link rel="stylesheet" href="./assets/fonts/font.css">
-  <link rel="stylesheet" href="./assets/style.css">
-
-  <title>Sep23 DAE demographics data shows continued return to pre-pandemic trends</title>
-
-  <meta name="description" content="We delve into the latest DAE population results, looking into how our cities are recovering four years after the pandemic." />
-
-  <!-- Social media meta -->
-  <meta property="og:site_name" content="Transurban" />
-  <meta property="og:type" content="article" />
-  <meta name="twitter:card" content="summary_large_image">
-
-  <meta property="og:title" content="Sep23 DAE demographics data shows continued return to pre-pandemic trends">
-  <meta property="og:description" content="We delve into the latest DAE population results, looking into how our cities are recovering four years after the pandemic."> 
-  <meta property="og:url" content="https://trafficteam.substack.com/p/our-latest-demographics-data-shows">
-  
-   <!-- scripts -->
-  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.js'></script>
-  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.css' rel='stylesheet' />
-  <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
-  <script src="https://unpkg.com/scrollama"></script>
+    <link href="./asset/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./asset/css/bootstrap.css" rel="stylesheet">
+    <link href="./asset/css/carousel.css" rel="stylesheet">
+    <link href="./asset/css/Home.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        .affix {
+            width:160px;
+        }
+        .affix li {
+            list-style-type : none;
+            height : 35px;
+            line-height:35px;
+            vertical-align:middle;
+        }
+        ul.slides li{
+            width : 33.3%;
+            overflow:hidden;
+            float : left;
+            border:0px solid #ccc;
+            margin: 15px 0;
+            list-style-type : none;
+            position:relative;
+        }
+        ul.slides li a {
+            padding:5px;
+            display:block;
+        }
+        ul.slides li a strong{
+            font-size:15px;
+            color : #1e90ff;
+        }
+        ul.slides li a:hover {
+            background-color:#eee;
+            text-decoration:none;
+        }
+        ul.slides li img {
+            width:50%;
+        }
+        ul.slides li span {
+            color:#666;
+            width:36%;
+            vertical-align:top;
+            display:inline-block;
+            *zoom:1;
+        }
+        .col-md-10 h3 {
+            clear:both;
+            margin:10px 0;
+            padding-bottom:10px;
+            border-bottom:1px solid #ccc;
+        }
+        .col-md-10 h3 a {
+            display:inline-block;
+            *zoom:1;
+            padding-top:20px;
+        }
+        #chartsTypeNav ul li {
+            transition: background-color 0.3s;
+            -moz-transition: background-color 0.3s;
+            -webkit-transition: background-color 0.3s;
+            -o-transition: background-color 0.3s;
+            padding-left:10px;
+        }
+    </style>
 </head>
 
-<body>
-
-  <header class="hidden-sm-and-down">
-    <nav class="v-toolbar v-toolbar--fixed"
-      style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);">
-      <div class="v-toolbar__content" style="height: 64px;">
-        <a href="https://www.transurban.com/">
-          <img src="./assets/img/logo.png" alt="Transurban Logo" width="180px">
-        </a>
-
-        <div class="spacer"></div>
-       
-      </div>
-    </nav>
-  </header>
-
-  <header class="hidden-md-and-up">
-    <aside id="v-drawer"
-      class="v-navigation-drawer v-navigation-drawer--fixed v-navigation-drawer--open v-navigation-drawer--temporary"
-      style="height: 100%;margin-top: 0px;max-height: calc(100% - 0px);transform: translateX(-300px);width: 300px;">
-      <div class="v-list" style="color: #000; padding-top: 48px;">          
-      </div>
-    </aside>
-
-    <nav class="v-toolbar v-toolbar--fixed"
-      style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);">
-      <div class="v-toolbar__content" style="height: 64px;">
-        <a href="/">
-          <img src="./assets/img/logo.png" alt="Transurban Logo" width="180px">
-        </a>
-        <div class="spacer"></div>        
-      </div>
-    </nav>
-  </header>
-
-  <main class="main-content">
-    <section class="hero">
-      <div class="video-wrapper hidden-xs-only">
-        <video preload="none" playsinline autoplay muted loop id="pop-video">
-          <source src="assets/video/aus-pop.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="video-wrapper hidden-sm-and-up">
-        <video preload="none" playsinline autoplay muted loop id="pop-video">
-          <source src="assets/video/aus-pop.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="hero__inner centered">
-        <p>
-          Economics & Spatial Analytics / Transport Analytics Team
-        </p>
-        <h2>
-          Sep23 DAE Demographics Update: Nearing Pre-Pandemic Patterns
-        </h2>
-        <p> by Jack Jin<br>
-          <b>Published</b> 6 Apr 2024
-        </p>
-      </div>
-    </section>
-
-    <div id="map"></div>
-    <div id="story"></div>
-
-    <footer>
-      <div class="story-footer centered">
-        <div class="story-footer__credits">
-          <ul>		  
-			<li>
-              <b>Design by </b> Jack Jin
-            </li>
-			
-            <li>
-              <b>Research by </b> Pete Klestov
-            </li>         
-            
-          </ul>
+<body>   
+    <div class="container" style="padding-top:10px;">
+        <div class="row-fluid">
+            <div class="col-md-2">
+                <div class = 'affix' style="margin-left:-20px;" id="chartsTypeNav">
+                    <ul style="padding:5px 0;">
+                        <li> <a href="#reports">Reports</abbr></a></li>
+                        <li> <a href="#charts">Charts</abbr></a></li>										
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10">               
+                <div>
+                    <h3>Economics and Spatial Analytics Reports<a name="reports"> </a></h3>
+                    <div class="section">
+                        <div class="thumb3">
+                          <ul class="slides">
+                            <li data-thumb="asset/img/pop.png">
+                              <a href="pop/pop.html"><img src="asset/img/pop.png" >
+                              <span><strong>Sep23 Forecast</strong><br/>Sep23 Pop & Emp Insights</span></a>
+                            </li><!--/li-->
+                            <li data-thumb="asset/img/freight.png">
+                              <a href="freight/freight.html"><img src="asset/img/freight.png">
+                              <span><strong>Freight</strong><br/>Truck Growth from 2021 to 2031</span></a>                           						
+							 </li><!--/li-->
+                          </ul>
+                        </div>
+                    </div>
+                </div>
+				<div>
+                    <h3>Drafted Charts<a name="charts"> </a></h3>
+                    <div class="section">
+                        <div class="thumb3">
+                          <ul class="slides">			
+							<li data-thumb="asset/img/chord.png">
+                              <a href="other/chord.html"><img src="asset/img/chord.png" >
+                              <span><strong>Chord Chart</strong><br/>Top 10 OD by trips</span></a>
+                            </li><!--/li-->
+                            <li data-thumb="asset/img/od.png">
+                              <a href="other/telstra.html"><img src="asset/img/od.png">
+                              <span><strong>Telstra OD</strong><br/>Top 10 Telstra OD trips</span></a>
+                            </li><!--/li-->
+							 <li data-thumb="asset/img/population.png">
+                              <a href="other/population.html"><img src="asset/img/population.png">
+                              <span><strong>Pop Growth</strong><br/>Population growth by SA2</span></a>
+                            </li><!--/li-->
+							<li data-thumb="asset/img/graph1.png">
+                              <a href="charts/graph-1.html"><img src="asset/img/graph1.png">
+                              <span><strong>Graph</strong><br/>Les miserables</span></a>
+                            </li><!--/li-->  
+							 <li data-thumb="asset/img/jtw-sankey.png">
+                              <a href="charts/sankey-jtw-gc.html"><img src="asset/img/jtw-sankey.png">
+                              <span><strong>JTW Sankey</strong><br/>Population growth by SA2</span></a>
+                            </li><!--/li-->    							
+							<li data-thumb="asset/img/telstra-google.png">
+                              <a href="charts/map-telstra-google.html"><img src="asset/img/telstra-google.png">
+                              <span><strong>Telstra GM</strong><br/>Top 10 Telstra OD trips</span></a>
+                            </li><!--/li-->							
+                          </ul>
+                        </div>
+                    </div>
+                </div> 				
+            </div>
         </div>
-
-        <div class="story-footer__partners">
-          <p>
-            <em>This story was drafted based on the Sep23 commission forecast of <a href="https://www.deloitte.com/au/en.html"
-                target="_blank">Deloitte Access Economic</a>.</em>
-          </p>
-
-          <div class="partner-logos" >
-            <img src="./assets/img/partners/deloitte-logo.png" alt="open deloitte logo" style="height: 50px;">
-          </div>
-
-          <p>
-           The September 2023 update from the DAE Commission introduces several significant changes to their forecasting approach:
-		<ol>
-			<li><b>Base Year Update:</b> The new base year for forecasts is now 2021, incorporating data from the 2021 census for the first time.</li>
-			<li><b>Population Data Integration:</b> They've integrated ABS's Estimated Residential Population (ERP) data at the SA2 level, detailing age and sex distribution from 2011 to 2022.</li>
-			<li><b>Labor Force Data Utilization:</b> ABS labor force data, categorized by ANZIC industry and ANZSCO occupation at the SA4 level, has been incorporated into the PUR employment data creation process.</li>
-			<li><b>Alignment with Macro-economic Forecasts:</b> State-level total population and PUR employment by industry data have been aligned with DAE's long-term macro-economic forecasts.</li>
-			<li><b>Geographic System Update:</b> The geographic system has transitioned from ASGS 2016 to ASGS 2021.</li>
-			<li><b>Education Data Update:</b> Updates have been made to the primary and secondary student data, which now include 2022 figures from ACARA.</li>
-		</ol>
-
-		   These changes signify a comprehensive update, enhancing the accuracy and relevance of the commission's forecasts.
-
-          </p>
-         
-        </div>
-
-        <div class="v-divider" style="margin-top: 16px"></div>
-
-        <div class="story-footer__meta"> 
-
-          <div class="v-divider" style="margin-bottom: 24px;"></div>
-
-          <div class="topics">
-            <h4>Topics:</h4>
-
-            <ul>
-              <li>population, </li>
-              <li>employment,</li>
-              <li>growth,</li>
-              <li>greater capital city,</li>
-              <li>pre-pandemic</li>              
-            </ul>
-          </div>
-
-          <div class="v-divider" style="margin-bottom: 24px;"></div>
-
-          <div>
-            <i>
-              Stay tuned for more insights, as we populate this substack. If there’s anything else you’re wanting to know, or if you’re wanting us to write about a certain topic, please reach out!, please drop us an e-mail at
-              <a href="mailto:jjin@transurban.com"
-                style="color: rgba(0, 0, 0, 0.8); text-decoration: underline;">jjin@transurban</a>
-            </i>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </main>  
-
-  <script src="./config.js"></script>
-  <script>
-    // control mobile drawer
-    var showDrawer = false;
-    var toggleDrawer = document.getElementById('toggle-drawer');
-    var drawer = document.getElementById('v-drawer')
-
-    toggleDrawer.addEventListener('click', function (event) {
-      event.preventDefault();
-
-      if (showDrawer === false) {
-        // show drawer
-        drawer.style.transform = 'translateX(0px)';
-        showDrawer = true;
-      } else {
-        // hide drawer
-        drawer.style.transform = 'translateX(-300px)';
-        showDrawer = false;
+    </div> <!-- /container -->
+   
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./asset/js/jquery.min.js"></script>    
+    <script type="text/javascript">
+    $(function (){
+      var section = $('[class=section]');
+      function loadImage(i) {
+          setTimeout(function (){
+              var list = $('div>ul>li>a', section[i]);
+              var nav = $('ol>li>img', section[i]);
+              var href;
+              var src;
+              if (list.length > 0) {
+                  for (var j = 0, k = list.length; j < k; j++) {
+                      list[j].target = '_blank';
+                      href = list[j].href.slice(list[j].href.lastIndexOf('/') + 1, -5);
+                      src = list[j].firstChild.src.replace(
+                          'cache', href
+                      );
+                      list[j].firstChild.alt = 'ECharts ' + href;
+                      list[j].firstChild.src = src;
+                      list[j].href += '#-en';
+                  }
+              }
+          }, i * 100);
       }
+      for (var i = 0, l = section.length; i < l; i++) {
+          loadImage(i);
+      }
+ 
 
-    }, false);
+    var offsetList = [];
+    var navDom = $('#chartsTypeNav>ul>li');
+    function _resize() {
+        offsetList = [];
+        $('h3').each(function(idx, dom){
+            offsetList[idx] = {
+                name : dom.childNodes[1].name,
+                offsetTop : dom.childNodes[1].offsetTop
+            };
+        });
+        offsetList.push({
+            name : 'topic',
+            offsetTop : 100000
+        })
+        setTimeout(_scroll, 500);
+    }
 
-    // accordion component
-    var accordion = document.querySelector('.accordion');
-    var toggleAccordion = document.getElementById('toggle-accordion');
-    var accordionContent = document.getElementById('accordion-content');
-    var accordionContentInner = accordionContent.querySelector('.accordion-content__wrap');
-
-    var accordionContentHeight = accordionContent.getBoundingClientRect().height;
-    var showAccordion = false;
-
-    accordionContent.style.maxHeight = 0;
-
-    toggleAccordion.addEventListener('click', function (event) {
-      accordion.classList.toggle('accordion--active');
-      showAccordion = !showAccordion;
-
-      accordionContent.style.maxHeight = showAccordion ? accordionContentHeight + 200 + 'px' : 0;
+    function scroll2Pos (idx) {
+        return function() {
+            $("body,html").animate(
+                {scrollTop: offsetList[idx].offsetTop + 30},
+                500
+            );
+            return false;
+        }
+    }
+    $('#chartsTypeNav>ul>li>a').each(function(idx, dom){
+        $(dom).on('click', scroll2Pos(idx));
     })
-
-  </script>
-  <script>
-    var layerTypes = {
-      'fill': ['fill-opacity'],
-      'line': ['line-opacity'],
-      'circle': ['circle-opacity', 'circle-stroke-opacity'],
-      'symbol': ['icon-opacity', 'text-opacity'],
-      'raster': ['raster-opacity'],
-      'fill-extrusion': ['fill-extrusion-opacity']
-    }
-
-    var alignments = {
-      'left': 'lefty',
-      'center': 'centered',
-      'right': 'righty'
-    }
-
-    function getLayerPaintType(layer) {
-      var layerType = map.getLayer(layer).type;
-      return layerTypes[layerType];
-    }
-
-    function setLayerOpacity(layer) {
-      var paintProps = getLayerPaintType(layer.layer);
-      paintProps.forEach(function (prop) {
-        map.setPaintProperty(layer.layer, prop, layer.opacity);
-      });
-    }
-
-    var story = document.getElementById('story');
-    var features = document.createElement('div');
-    features.classList.add(alignments[config.alignment]);
-    features.setAttribute('id', 'features');
-
-    config.chapters.forEach((record, idx) => {
-      var container = document.createElement('div');
-      var chapter = document.createElement('article');
-
-      if (record.title) {
-        var title = document.createElement('h3');
-        title.innerText = record.title;
-        chapter.appendChild(title);
-      }
-
-      if (record.image) {
-        var image = new Image();
-        image.src = record.image;
-        chapter.appendChild(image);
-      }
-
-      if (record.description) {
-        var story = document.createElement('div');
-        story.innerHTML = record.description;
-        chapter.appendChild(story);
-      }
-
-      container.setAttribute('id', record.id);
-      container.classList.add('step');
-      if (idx === 0) {
-        container.classList.add('active');
-      }
-
-      chapter.classList.add(config.theme);
-      container.appendChild(chapter);
-      features.appendChild(container);
+    $(window).on('scroll', _scroll);
+    $(window).on('resize', _resize);
+    _resize();
     });
-
-    story.appendChild(features);
-
-    // var footer = document.createElement('div');
-
-    // if (config.footer) {
-    //   var footerText = document.createElement('p');
-    //   footerText.innerHTML = config.footer;
-    //   footer.appendChild(footerText);
-    // }
-
-    // if (footer.innerText.length > 0) {
-    //   footer.classList.add(config.theme);
-    //   footer.setAttribute('id', 'footer');
-    //   story.appendChild(footer);
-    // }
-
-    mapboxgl.accessToken = config.accessToken;
-
-    const transformRequest = (url) => {
-      const hasQuery = url.indexOf("?") !== -1;
-      const suffix = hasQuery ? "&pluginName=journalismScrollytelling" : "?pluginName=journalismScrollytelling";
-      return {
-        url: url + suffix
-      }
-    }
-
-    var map = new mapboxgl.Map({
-      container: 'map',
-      style: config.style,
-      center: config.chapters[0].location.center,
-      zoom: config.chapters[0].location.zoom,
-      bearing: config.chapters[0].location.bearing,
-      pitch: config.chapters[0].location.pitch,
-      scrollZoom: false,
-      transformRequest: transformRequest,
-      interactive: false,
-      minZoom: 2,
-    });
-
-    var marker = new mapboxgl.Marker();
-    if (config.showMarkers) {
-      marker.setLngLat(config.chapters[0].location.center).addTo(map);
-    }
-
-    // instantiate the scrollama
-    var scroller = scrollama();
-
-    map.on("load", function () {
-      // setup the instance, pass callback functions
-      scroller
-        .setup({
-          step: '.step',
-          offset: 0.5,
-          progress: true
-        })
-        .onStepEnter(response => {
-	
-          var chapter = config.chapters.find(chap => chap.id === response.element.id);	  		  
-
-          // if mobile, adjust map zoom
-          chapter.location.zoom = window.innerWidth < 960 ? chapter.location.zoom - 1.5 : chapter.location.zoom;
-
-          response.element.classList.add('active');
-          map.flyTo(chapter.location);
-          if (config.showMarkers) {
-            marker.setLngLat(chapter.location.center);
-          }
-          if (chapter.onChapterEnter.length > 0) {
-            chapter.onChapterEnter.forEach(setLayerOpacity);
-          }
-		   
-		 
-		   
-		  if (chapter.rotateAnimation) {
-						map.once('moveend', function() {
-								const rotateNumber = map.getBearing();
-								map.rotateTo(rotateNumber + 90, {
-										duration: 24000, easing: function (t) {
-												return t;
-										}
-								});
-						});
-				}
-        })
-        .onStepExit(response => {
-          var chapter = config.chapters.find(chap => chap.id === response.element.id);
-          response.element.classList.remove('active');
-          if (chapter.onChapterExit.length > 0) {
-            chapter.onChapterExit.forEach(setLayerOpacity);
-          }	  	  
-        });				
-		
-    });      	
-		
-	// setup resize event
-    window.addEventListener('resize', scroller.resize);
-
-  </script>
-
-</body>
-
+    </script>
+  </body>
 </html>

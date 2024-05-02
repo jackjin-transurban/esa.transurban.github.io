@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">	
+     <style>
+        .echartMap div {
+            position: absolute;
+            overflow: auto;
+        }
+    </style>	   
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="lib/echarts-all-3.js"></script>      
+       <script type="text/javascript" src="lib/jquery.min.js"></script>  
+       <script type="text/javascript" src="lib/mapbox-gl-dev.js"></script>  
+	   <script type="text/javascript" src="lib/EchartsLayer.js"></script>  
+       <link href='asset/mapbox-gl.css' rel='stylesheet' />	   
+       <script type="text/javascript">
+   
+var map = new mapboxgl.Map({
+                container: 'container', // container id
+                style: {
+                    'version': 8,
+                    // "sprite": "./",
+                    'sources': {},
+                    'layers': []
+                },
+                center: [151.2093, -33.8688], // starting position
+                zoom: 11 // starting zoom
+            })
+			
+map.addControl(new mapboxgl.NavigationControl())
+			
+map.on('load', function () {
+    map.addSource('google.tile', {
+                    'type': 'raster',
+                    'tiles': ['https://www.google.com/maps/vt?lyrs=m@189&gl=en&x={x}&y={y}&z={z}'],
+                    'tileSize': 256
+                })
+                map.addLayer({
+                    'id': 'google',
+                    'type': 'raster',
+                    'source': 'google.tile'
+                })
+		
+  option = null;
+  
+  map.setPaintProperty('google', 'raster-opacity', 0.6);
+  
+  var geoCoordMap = {
+'Auburn and SE Parramatta': [151.021057967,-33.8542167744],
+'Bankstown': [151.008451149,-33.9404341134],
+'Eastern Suburbs': [151.212443872,-33.9507360134],
+'Canada Bay, Strathfield and Ashfield': [151.111198499,-33.8710309473],
+'Canterbury, Hurstville and Rockdale': [151.096523203,-33.9469532652],
+'CBD': [151.214347702,-33.8739328856],
+'Fairfield and E Liverpool': [150.899854406,-33.9049952298],
+'Inner West and South Sydney': [151.177864379,-33.8990754852],
+'Ryde - Hunters Hill': [151.113547128,-33.8029398252],
+'Sutherland': [151.054835289,-34.0256903031]
+  };
+
+  var Data1 = [
+[{
+name: 'CBD'
+}, {
+name: 'Eastern Suburbs',
+value: 198.25
+}],
+[{
+name: 'CBD'
+}, {
+name: 'Inner West and South Sydney',
+value: 12333.22
+}],
+[{
+name: 'CBD'
+}, {
+name: 'Canada Bay, Strathfield and Ashfield',
+value: 832.98
+}],
+[{
+name: 'CBD'
+}, {
+name: 'Canterbury, Hurstville and Rockdale',
+value: 24705.57
+}],
+[{
+name: 'CBD'
+}, {
+name: 'Sutherland',
+value: 7576.99
+}],
+[{
+name: 'CBD'
+}, {
+name: 'Bankstown',
+value: 5951.66
+}],
+[{
+name: 'CBD'
+}, {
+name: 'Auburn and SE Parramatta',
+value: 2828.48
+}],
+[{
+name: 'CBD'
+}, {
+name: 'Fairfield and E Liverpool',
+value: 7709.05
+}]
+];
+
+var Data2 = [
+[{
+name: 'Eastern Suburbs'
+}, {
+name: 'CBD',
+value: 222.32
+}],
+[{
+name: 'Eastern Suburbs'
+}, {
+name: 'Inner West and South Sydney',
+value: 3237.27
+}],
+[{
+name: 'Eastern Suburbs'
+}, {
+name: 'Canada Bay, Strathfield and Ashfield',
+value: 3988.47
+}],
+[{
+name: 'Eastern Suburbs'
+}, {
+name: 'Canterbury, Hurstville and Rockdale',
+value: 4027.58
+}],
+[{
+name: 'Eastern Suburbs'
+}, {
+name: 'Sutherland',
+value: 403.16
+}],
+[{
+name: 'Eastern Suburbs'
+}, {
+name: 'Bankstown',
+value: 1035.13
+}],
+[{
+name: 'Eastern Suburbs'
+}, {
+name: 'Auburn and SE Parramatta',
+value: 1761.27
+}],
+[{
+name: 'Eastern Suburbs'
+}, {
+name: 'Fairfield and E Liverpool',
+value: 1682.53
+}],
+[{
+name: 'Eastern Suburbs'
+}, {
+name: 'Ryde - Hunters Hill',
+value: 1081.94
+}]
+];
+
+var Data3 = [
+[{
+name: 'Inner West and South Sydney'
+}, {
+name: 'CBD',
+value: 6214.24
+}],
+[{
+name: 'Inner West and South Sydney'
+}, {
+name: 'Eastern Suburbs',
+value: 2652.3
+}],
+[{
+name: 'Inner West and South Sydney'
+}, {
+name: 'Canada Bay, Strathfield and Ashfield',
+value: 10299.59
+}],
+[{
+name: 'Inner West and South Sydney'
+}, {
+name: 'Canterbury, Hurstville and Rockdale',
+value: 14732.79
+}],
+[{
+name: 'Inner West and South Sydney'
+}, {
+name: 'Sutherland',
+value: 3979.65
+}],
+[{
+name: 'Inner West and South Sydney'
+}, {
+name: 'Bankstown',
+value: 3488.84
+}],
+[{
+name: 'Inner West and South Sydney'
+}, {
+name: 'Auburn and SE Parramatta',
+value: 4609.58
+}],
+[{
+name: 'Inner West and South Sydney'
+}, {
+name: 'Fairfield and E Liverpool',
+value: 5784.32
+}],
+[{
+name: 'Inner West and South Sydney'
+}, {
+name: 'Ryde - Hunters Hill',
+value: 4014.52
+}]
+];
+
+var Data4 = [
+[{
+name: 'Canada Bay, Strathfield and Ashfield'
+}, {
+name: 'CBD',
+value: 1107.67
+}],
+[{
+name: 'Canada Bay, Strathfield and Ashfield'
+}, {
+name: 'Eastern Suburbs',
+value: 3651.11
+}],
+[{
+name: 'Canada Bay, Strathfield and Ashfield'
+}, {
+name: 'Inner West and South Sydney',
+value: 11107.26
+}],
+[{
+name: 'Canada Bay, Strathfield and Ashfield'
+}, {
+name: 'Canterbury, Hurstville and Rockdale',
+value: 11537.32
+}],
+[{
+name: 'Canada Bay, Strathfield and Ashfield'
+}, {
+name: 'Sutherland',
+value: 2728.52
+}],
+[{
+name: 'Canada Bay, Strathfield and Ashfield'
+}, {
+name: 'Bankstown',
+value: 4432.82
+}],
+[{
+name: 'Canada Bay, Strathfield and Ashfield'
+}, {
+name: 'Auburn and SE Parramatta',
+value: 530.69
+}],
+[{
+name: 'Canada Bay, Strathfield and Ashfield'
+}, {
+name: 'Fairfield and E Liverpool',
+value: 4827.64
+}],
+[{
+name: 'Canada Bay, Strathfield and Ashfield'
+}, {
+name: 'Ryde - Hunters Hill',
+value: 41.99
+}]
+];
+
+var Data5 = [
+[{
+name: 'Canterbury, Hurstville and Rockdale'
+}, {
+name: 'CBD',
+value: 22931.77
+}],
+[{
+name: 'Canterbury, Hurstville and Rockdale'
+}, {
+name: 'Eastern Suburbs',
+value: 2400.87
+}],
+[{
+name: 'Canterbury, Hurstville and Rockdale'
+}, {
+name: 'Inner West and South Sydney',
+value: 11666.55
+}],
+[{
+name: 'Canterbury, Hurstville and Rockdale'
+}, {
+name: 'Canada Bay, Strathfield and Ashfield',
+value: 11577.72
+}],
+[{
+name: 'Canterbury, Hurstville and Rockdale'
+}, {
+name: 'Auburn and SE Parramatta',
+value: 3309.97
+}],
+[{
+name: 'Canterbury, Hurstville and Rockdale'
+}, {
+name: 'Fairfield and E Liverpool',
+value: 289.9
+}],
+[{
+name: 'Canterbury, Hurstville and Rockdale'
+}, {
+name: 'Ryde - Hunters Hill',
+value: 3512.7
+}]
+];
+
+var Data6 = [
+[{
+name: 'Sutherland'
+}, {
+name: 'CBD',
+value: 8641.72
+}],
+[{
+name: 'Sutherland'
+}, {
+name: 'Inner West and South Sydney',
+value: 3969.43
+}],
+[{
+name: 'Sutherland'
+}, {
+name: 'Canada Bay, Strathfield and Ashfield',
+value: 2602.57
+}],
+[{
+name: 'Sutherland'
+}, {
+name: 'Auburn and SE Parramatta',
+value: 1530.81
+}],
+[{
+name: 'Sutherland'
+}, {
+name: 'Fairfield and E Liverpool',
+value: 111.14
+}],
+[{
+name: 'Sutherland'
+}, {
+name: 'Ryde - Hunters Hill',
+value: 1178.43
+}]
+];
+
+var Data7 = [
+[{
+name: 'Bankstown'
+}, {
+name: 'CBD',
+value: 5687.86
+}],
+[{
+name: 'Bankstown'
+}, {
+name: 'Eastern Suburbs',
+value: 1065.94
+}],
+[{
+name: 'Bankstown'
+}, {
+name: 'Inner West and South Sydney',
+value: 2817.18
+}],
+[{
+name: 'Bankstown'
+}, {
+name: 'Canada Bay, Strathfield and Ashfield',
+value: 4240.72
+}],
+[{
+name: 'Bankstown'
+}, {
+name: 'Auburn and SE Parramatta',
+value: 1650.97
+}],
+[{
+name: 'Bankstown'
+}, {
+name: 'Ryde - Hunters Hill',
+value: 1497.42
+}]
+];
+
+var Data8 = [
+[{
+name: 'Auburn and SE Parramatta'
+}, {
+name: 'CBD',
+value: 929.77
+}],
+[{
+name: 'Auburn and SE Parramatta'
+}, {
+name: 'Eastern Suburbs',
+value: 1416.05
+}],
+[{
+name: 'Auburn and SE Parramatta'
+}, {
+name: 'Inner West and South Sydney',
+value: 4547.9
+}],
+[{
+name: 'Auburn and SE Parramatta'
+}, {
+name: 'Canada Bay, Strathfield and Ashfield',
+value: 552.69
+}],
+[{
+name: 'Auburn and SE Parramatta'
+}, {
+name: 'Canterbury, Hurstville and Rockdale',
+value: 3430.75
+}],
+[{
+name: 'Auburn and SE Parramatta'
+}, {
+name: 'Sutherland',
+value: 1583.31
+}],
+[{
+name: 'Auburn and SE Parramatta'
+}, {
+name: 'Bankstown',
+value: 1940.27
+}],
+[{
+name: 'Auburn and SE Parramatta'
+}, {
+name: 'Fairfield and E Liverpool',
+value: 3387
+}],
+[{
+name: 'Auburn and SE Parramatta'
+}, {
+name: 'Ryde - Hunters Hill',
+value: 575.81
+}]
+];
+
+var Data9 = [
+[{
+name: 'Fairfield and E Liverpool'
+}, {
+name: 'CBD',
+value: 5655.41
+}],
+[{
+name: 'Fairfield and E Liverpool'
+}, {
+name: 'Eastern Suburbs',
+value: 1749.49
+}],
+[{
+name: 'Fairfield and E Liverpool'
+}, {
+name: 'Inner West and South Sydney',
+value: 6056.06
+}],
+[{
+name: 'Fairfield and E Liverpool'
+}, {
+name: 'Canada Bay, Strathfield and Ashfield',
+value: 3828.66
+}],
+[{
+name: 'Fairfield and E Liverpool'
+}, {
+name: 'Canterbury, Hurstville and Rockdale',
+value: 654.15
+}],
+[{
+name: 'Fairfield and E Liverpool'
+}, {
+name: 'Sutherland',
+value: 314.65
+}],
+[{
+name: 'Fairfield and E Liverpool'
+}, {
+name: 'Auburn and SE Parramatta',
+value: 1874.41
+}],
+[{
+name: 'Fairfield and E Liverpool'
+}, {
+name: 'Ryde - Hunters Hill',
+value: 1440.01
+}]
+];
+
+var Data10 = [
+[{
+name: 'Ryde - Hunters Hill'
+}, {
+name: 'Eastern Suburbs',
+value: 1006.45
+}],
+[{
+name: 'Ryde - Hunters Hill'
+}, {
+name: 'Inner West and South Sydney',
+value: 3876.58
+}],
+[{
+name: 'Ryde - Hunters Hill'
+}, {
+name: 'Canada Bay, Strathfield and Ashfield',
+value: 0.37
+}],
+[{
+name: 'Ryde - Hunters Hill'
+}, {
+name: 'Canterbury, Hurstville and Rockdale',
+value: 3398.14
+}],
+[{
+name: 'Ryde - Hunters Hill'
+}, {
+name: 'Sutherland',
+value: 1072.02
+}],
+[{
+name: 'Ryde - Hunters Hill'
+}, {
+name: 'Bankstown',
+value: 1480.47
+}],
+[{
+name: 'Ryde - Hunters Hill'
+}, {
+name: 'Auburn and SE Parramatta',
+value: 411.29
+}],
+[{
+name: 'Ryde - Hunters Hill'
+}, {
+name: 'Fairfield and E Liverpool',
+value: 966.9
+}]
+];     
+
+  var convertData = function(data) {
+      var res = [];
+      for (var i = 0; i < data.length; i++) {
+          var dataItem = data[i];
+          var fromCoord = geoCoordMap[dataItem[0].name];
+          var toCoord = geoCoordMap[dataItem[1].name];
+          if (fromCoord && toCoord) {
+              res.push({
+                  fromName: dataItem[0].name,
+                  toName: dataItem[1].name,
+                  coords: [fromCoord, toCoord]
+              });
+          }
+      }
+      return res;
+  };
+
+  var color = ['#a6c84c', '#ffa022', '#46bee9'];
+  var mySeries = [];
+  [
+      ['CBD', Data1],['Eastern Suburbs', Data2],['Inner West and South Sydney', Data3],['Canada Bay, Strathfield and Ashfield', Data4],['Canterbury, Hurstville and Rockdale', Data5],['Sutherland', Data6],['Bankstown', Data7],['Auburn and SE Parramatta', Data8],['Fairfield and E Liverpool', Data9],['Ryde - Hunters Hill', Data10]
+  ].forEach(function(item, i) {
+      mySeries.push({ //线
+          name: item[0],
+          //                      name: item[0] + ' Top10',
+          type: 'lines',
+		  coordinateSystem: 'GLMap',
+          zlevel: 1,
+          effect: {
+              show: true,
+              period: 6,
+              trailLength: 0.7,
+              color: 'red',
+              symbolSize: 3
+          },
+          lineStyle: {
+              normal: {
+                  color: color[0],
+                  width: 0,
+                  curveness: 0.2
+              }
+          },
+          data: convertData(item[1])
+      }, { //移动 点
+          name: item[0],
+          //                      name: item[0] + ' Top10',
+          type: 'lines',
+		  coordinateSystem: 'GLMap',
+          zlevel: 2,
+          effect: {
+              show: true,
+              period: 6,
+              trailLength: 0,
+              symbol: 'arrow',
+              symbolSize: 5,
+			  color: 'red'
+          },
+          lineStyle: {
+              normal: {
+                  color: 'blue',
+                  width: 2,
+                  opacity: 0.4,
+                  curveness: 0.2
+              }
+          },
+          data: convertData(item[1])
+      }, { //省份圆点
+          name: item[0],
+          //                      name: item[0] + ' Top10',
+          type: 'effectScatter',
+          coordinateSystem: 'GLMap',
+          zlevel: 2,
+          rippleEffect: {
+              brushType: 'stroke'
+          },
+          label: {
+              normal: {
+                  show: true,
+                  position: 'right',
+                  formatter: '{b}',
+				  color: 'red'				  
+              }
+          },
+          symbolSize: function(val) {
+              return val[2] / 600;
+          },
+          itemStyle: {
+              normal: {
+                  color: function(params) {
+                      var tmp = params.data.value[2]
+                      if (tmp < 5000) {
+                          return 'darkyellow';
+                      } else if (tmp > 10000) {
+                          return 'red'
+                      } else
+                          return 'darkorange';
+                  }
+              }
+          },
+          data: item[1].map(function(dataItem) {
+              return {
+                  name: dataItem[1].name,
+                  value: geoCoordMap[dataItem[1].name].concat([dataItem[1].value])
+              };
+          })
+      });
+  });
+
+  option = {     
+	  tooltip : {  
+        trigger: 'item',
+		formatter: '{b}'
+      },
+      title: {
+          text: 'Telstra OD Analysis',
+          subtext: 'Data Source: Telstra',
+          left: 'center',
+          textStyle: {
+              color: '#fff'
+          },		  
+          subtextStyle: {
+              color: 'yellow',
+              fontWeight: 'bold'
+          }
+      },	  
+      tooltip: {
+          trigger: 'item',
+          formatter: function(params) {
+              if (params.seriesIndex == 2 || params.seriesIndex == 5 || params.seriesIndex == 8) {
+                  return params.name + '<br>' + params.seriesName + ':' + params.data.value[2] + ' trips';
+              } else if (params.seriesIndex == 1 || params.seriesIndex == 4 || params.seriesIndex == 7) {
+                  return params.data.fromName + '→' + params.data.toName;
+              }
+          }		 
+      },
+	   GLMap: {
+
+                },
+      legend: {
+          orient: 'vertical',
+          top: '6%',
+          left: 'left',
+          data: ['CBD','Eastern Suburbs','Inner West and South Sydney','Canada Bay, Strathfield and Ashfield','Canterbury, Hurstville and Rockdale','Sutherland','Bankstown','Auburn and SE Parramatta','Fairfield and E Liverpool','Ryde - Hunters Hill'],
+          inactiveColor: 'gray',
+		  textStyle: {
+              color: 'red',
+              fontWeight: 'bold'			  
+          },
+          selectedMode: 'single'
+      },     
+      series: mySeries
+  };
+
+var echartslayer=new EchartsLayer(map);
+
+  if (option && typeof option === "object") {
+       echartslayer.chart.setOption(option);
+  }
+  
+   })
+       </script>
+   </body>
+</html>

@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+       <meta charset="utf-8">
+   </head>
+     <body style="height: 100%; margin: 0">
+     <div id="container" style="height: 100vh"></div>	        
+        	
+     <script src="lib/echarts.js"></script>    
+     <script src="lib/jquery.min.js"></script>     	 
+     <script type="text/javascript">
+	 
+	 require.config({
+        paths: {
+            echarts: './lib'
+        }		
+    });
+	
+	 require(
+            [
+                'echarts',
+                'echarts/chart/map'				
+            ],
+			
+			function (ec) {
+			
+var dom = document.getElementById("container");
+var myChart = ec.init(dom);
+					
+require('echarts/util/mapData/params').params.super = {
+    getGeoJson: function (callback) {
+        $.getJSON('data/super.json',callback);
+    }
+}
+
+option = {
+    backgroundColor: '#1b1b1b',
+    title : {
+        text: 'Telstra OD Analysis',    
+        x:'center',
+        textStyle : {
+            color: '#fff'
+        }
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: '{b}'
+    },
+    legend: {
+        orient: 'vertical',
+        x:'right',
+        data:['Airport','Auburn and SE Parramatta','Bankstown','Campbelltown','Canada Bay, Strathfield and Ashfield','Canterbury, Hurstville and Rockdale','CBD','Eastern Suburbs','External Zones-South','External Zones-South-East','Fairfield and E Liverpool','Inner West and South Sydney','Lane Cove and Willoughby','North Sydney and Mosman','NW Parramatta and N Blacktown','Parramatta (Inner)','Ryde - Hunters Hill','S Blacktown and Holroyd','Sutherland','Wollondilly'],
+        selectedMode: 'single',
+        selected:{		
+'Auburn and SE Parramatta' :  false,
+'Bankstown' :  false,
+'Campbelltown' :  false,
+'Canada Bay, Strathfield and Ashfield' :  false,
+'Canterbury, Hurstville and Rockdale' :  false,
+'CBD' :  false,
+'Eastern Suburbs' :  false,
+'External Zones-South' :  false,
+'External Zones-South-East' :  false,
+'Fairfield and E Liverpool' :  false,
+'Inner West and South Sydney' :  false,
+'Lane Cove and Willoughby' :  false,
+'North Sydney and Mosman' :  false,
+'NW Parramatta and N Blacktown' :  false,
+'Parramatta (Inner)' :  false,
+'Ryde - Hunters Hill' :  false,
+'S Blacktown and Holroyd' :  false,
+'Sutherland' :  false,
+'Wollondilly' :  false
+        },
+        textStyle : {
+            color: '#fff'
+        }
+    },
+    toolbox: {
+        show : true,
+        orient : 'vertical',
+        x: 'left',
+        y: 'center',
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    dataRange: {
+        min : 0,
+        max : 10000,
+        calculable : true,
+        color: ['#ff3333', 'orange', 'yellow','lime','aqua'],
+        textStyle:{
+            color:'#fff'
+        }
+    },
+    series : [
+        {
+            name: 'nsw',
+            type: 'map',
+            roam: true,
+            hoverable: false,
+            mapType: 'super',			
+            itemStyle:{
+                normal:{
+                    borderColor:'rgba(100,149,233,1)',
+                    borderWidth:0.5,
+                    areaStyle:{
+                        color: '#1b1b1b'
+                    }
+                }
+            },
+            data:[],            
+            geoCoord: {                
+'Airport': [151.178002537,-33.9440012664],
+'Auburn and SE Parramatta': [151.021057967,-33.8542167744],
+'Bankstown': [151.008451149,-33.9404341134],
+'Campbelltown': [150.844373396,-34.0212378576],
+'Canada Bay, Strathfield and Ashfield': [151.111198499,-33.8710309473],
+'Canterbury, Hurstville and Rockdale': [151.096523203,-33.9469532652],
+'CBD': [151.214347702,-33.8739328856],
+'Eastern Suburbs': [151.212443872,-33.9507360134],
+'External Zones-South': [150.97466476,-34.2335742656],
+'External Zones-South-East': [150.694471421,-34.335975366],
+'Fairfield and E Liverpool': [150.899854406,-33.9049952298],
+'Inner West and South Sydney': [151.177864379,-33.8990754852],
+'Lane Cove and Willoughby': [151.183456525,-33.7987943313],
+'North Sydney and Mosman': [151.224926506,-33.8303284079],
+'NW Parramatta and N Blacktown': [150.970766382,-33.7891966025],
+'Parramatta (Inner)': [150.992770623,-33.816622694],
+'Ryde - Hunters Hill': [151.113547128,-33.8029398252],
+'S Blacktown and Holroyd': [150.858653138,-33.810023166],
+'Sutherland': [151.054835289,-34.0256903031],
+'Wollondilly': [150.22604784,-34.0334961754]
+            }
+        },
+        {
+            name: 'Airport',
+            type: 'map',
+            mapType: 'super',
+            data:[],
+            markLine : {
+                smooth:true,
+                effect : {
+                    show: true,
+                    scaleSize: 1,
+                    period: 30,
+                    color: '#fff',
+                    shadowBlur: 10
+                },
+                itemStyle : {
+                    normal: {
+                        borderWidth:1,
+                        lineStyle: {
+                            type: 'solid',
+                            shadowBlur: 10
+                        }
+                    }
+                },
+                data : [
+[{name: 'Airport'}, {name:'Auburn and SE Parramatta',value:320.34}],
+[{name: 'Airport'}, {name:'Canada Bay, Strathfield and Ashfield',value:589.88}],
+[{name: 'Airport'}, {name:'Canterbury, Hurstville and Rockdale',value:38.22}],
+[{name: 'Airport'}, {name:'CBD',value:1022.61}],
+[{name: 'Airport'}, {name:'Fairfield and E Liverpool',value:115.71}],
+[{name: 'Airport'}, {name:'Inner West and South Sydney',value:860.31}],
+[{name: 'Airport'}, {name:'Lane Cove and Willoughby',value:515.41}],
+[{name: 'Airport'}, {name:'North Sydney and Mosman',value:650.72}],
+[{name: 'Airport'}, {name:'NW Parramatta and N Blacktown',value:246.28}],
+[{name: 'Airport'}, {name:'Parramatta (Inner)',value:175.12}],
+[{name: 'Airport'}, {name:'Ryde - Hunters Hill',value:413.35}],
+[{name: 'Airport'}, {name:'S Blacktown and Holroyd',value:241.47}]
+                ]
+            },
+            markPoint : {
+                symbol:'emptyCircle',
+                symbolSize : function (v){
+                    return 10 + v/2000
+                },
+                effect : {
+                    show: true,
+                    shadowBlur : 0
+                },
+                itemStyle:{
+                    normal:{
+                        label:{show:false}
+                    },
+                    emphasis: {
+                        label:{position:'top'}
+                    }
+                },
+                data : [
+{name:'Auburn and SE Parramatta',value:320.34},
+{name:'Canada Bay, Strathfield and Ashfield',value:589.88},
+{name:'Canterbury, Hurstville and Rockdale',value:38.22},
+{name:'CBD',value:1022.61},
+{name:'Fairfield and E Liverpool',value:115.71},
+{name:'Inner West and South Sydney',value:860.31},
+{name:'Lane Cove and Willoughby',value:515.41},
+{name:'North Sydney and Mosman',value:650.72},
+{name:'NW Parramatta and N Blacktown',value:246.28},
+{name:'Parramatta (Inner)',value:175.12},
+{name:'Ryde - Hunters Hill',value:413.35},
+{name:'S Blacktown and Holroyd',value:241.47}
+                ]
+            }
+        },
+        {
+            name: 'Auburn and SE Parramatta',
+            type: 'map',
+            mapType: 'super',
+            data:[],
+            markLine : {
+                smooth:true,
+                effect : {
+                    show: true,
+                    scaleSize: 1,
+                    period: 30,
+                    color: '#fff',
+                    shadowBlur: 10
+                },
+                itemStyle : {
+                    normal: {
+                        borderWidth:1,
+                        lineStyle: {
+                            type: 'solid',
+                            shadowBlur: 10
+                        }
+                    }
+                },
+                data : [
+[{name: 'Auburn and SE Parramatta'}, {name:'Airport',value:566.82}],
+[{name: 'Auburn and SE Parramatta'}, {name:'Bankstown',value:1940.27}],
+[{name: 'Auburn and SE Parramatta'}, {name:'Campbelltown',value:1420.19}],
+[{name: 'Auburn and SE Parramatta'}, {name:'Canada Bay, Strathfield and Ashfield',value:552.69}],
+[{name: 'Auburn and SE Parramatta'}, {name:'Canterbury, Hurstville and Rockdale',value:3430.75}],
+[{name: 'Auburn and SE Parramatta'}, {name:'CBD',value:929.77}],
+[{name: 'Auburn and SE Parramatta'}, {name:'Eastern Suburbs',value:1416.05}],
+[{name: 'Auburn and SE Parramatta'}, {name:'External Zones-South',value:662.45}],
+[{name: 'Auburn and SE Parramatta'}, {name:'External Zones-South-East',value:639.36}],
+[{name: 'Auburn and SE Parramatta'}, {name:'Fairfield and E Liverpool',value:3387}],
+[{name: 'Auburn and SE Parramatta'}, {name:'Inner West and South Sydney',value:4547.9}],
+[{name: 'Auburn and SE Parramatta'}, {name:'Lane Cove and Willoughby',value:229.04}],
+[{name: 'Auburn and SE Parramatta'}, {name:'North Sydney and Mosman',value:292.02}],
+[{name: 'Auburn and SE Parramatta'}, {name:'NW Parramatta and N Blacktown',value:95.09}],
+[{name: 'Auburn and SE Parramatta'}, {name:'Ryde - Hunters Hill',value:575.81}],
+[{name: 'Auburn and SE Parramatta'}, {name:'Sutherland',value:1583.31}],
+[{name: 'Auburn and SE Parramatta'}, {name:'Wollondilly',value:864.59}]
+                ]
+            },
+            markPoint : {
+                symbol:'emptyCircle',
+                symbolSize : function (v){
+                    return 10 + v/2000
+                },
+                effect : {
+                    show: true,
+                    shadowBlur : 0
+                },
+                itemStyle:{
+                    normal:{
+                        label:{show:false}
+                    },
+                    emphasis: {
+                        label:{position:'top'}
+                    }
+                },
+                data : [
+{name:'Airport',value:566.82},
+{name:'Bankstown',value:1940.27},
+{name:'Campbelltown',value:1420.19},
+{name:'Canada Bay, Strathfield and Ashfield',value:552.69},
+{name:'Canterbury, Hurstville and Rockdale',value:3430.75},
+{name:'CBD',value:929.77},
+{name:'Eastern Suburbs',value:1416.05},
+{name:'External Zones-South',value:662.45},
+{name:'External Zones-South-East',value:639.36},
+{name:'Fairfield and E Liverpool',value:3387},
+{name:'Inner West and South Sydney',value:4547.9},
+{name:'Lane Cove and Willoughby',value:229.04},
+{name:'North Sydney and Mosman',value:292.02},
+{name:'NW Parramatta and N Blacktown',value:95.09},
+{name:'Ryde - Hunters Hill',value:575.81},
+{name:'Sutherland',value:1583.31},
+{name:'Wollondilly',value:864.59}
+                ]
+            }
+        },
+        {
+            name: 'Bankstown',
+            type: 'map',
+            mapType: 'super',
+            data:[],
+            markLine : {
+                smooth:true,
+                effect : {
+                    show: true,
+                    scaleSize: 1,
+                    period: 30,
+                    color: '#fff',
+                    shadowBlur: 10
+                },
+                itemStyle : {
+                    normal: {
+                        borderWidth:1,
+                        lineStyle: {
+                            type: 'solid',
+                            shadowBlur: 10
+                        }
+                    }
+                },
+                data : [
+[{name: 'Bankstown'}, {name:'Auburn and SE Parramatta',value:1650.97}],
+[{name: 'Bankstown'}, {name:'Canada Bay, Strathfield and Ashfield',value:4240.72}],
+[{name: 'Bankstown'}, {name:'CBD',value:5687.86}],
+[{name: 'Bankstown'}, {name:'Eastern Suburbs',value:1065.94}],
+[{name: 'Bankstown'}, {name:'Inner West and South Sydney',value:2817.18}],
+[{name: 'Bankstown'}, {name:'Lane Cove and Willoughby',value:719.1}],
+[{name: 'Bankstown'}, {name:'North Sydney and Mosman',value:1124.63}],
+[{name: 'Bankstown'}, {name:'NW Parramatta and N Blacktown',value:1338.18}],
+[{name: 'Bankstown'}, {name:'Parramatta (Inner)',value:1324.7}],
+[{name: 'Bankstown'}, {name:'Ryde - Hunters Hill',value:1497.42}],
+[{name: 'Bankstown'}, {name:'S Blacktown and Holroyd',value:1162.68}]
+                ]
+            },
+            markPoint : {
+                symbol:'emptyCircle',
+                symbolSize : function (v){
+                    return 10 + v/2000
+                },
+                effect : {
+                    show: true,
+                    shadowBlur : 0
+                },
+                itemStyle:{
+                    normal:{
+                        label:{show:false}
+                    },
+                    emphasis: {
+                        label:{position:'top'}
+                    }
+                },
+                data : [
+{name:'Auburn and SE Parramatta',value:1650.97},
+{name:'Canada Bay, Strathfield and Ashfield',value:4240.72},
+{name:'CBD',value:5687.86},
+{name:'Eastern Suburbs',value:1065.94},
+{name:'Inner West and South Sydney',value:2817.18},
+{name:'Lane Cove and Willoughby',value:719.1},
+{name:'North Sydney and Mosman',value:1124.63},
+{name:'NW Parramatta and N Blacktown',value:1338.18},
+{name:'Parramatta (Inner)',value:1324.7},
+{name:'Ryde - Hunters Hill',value:1497.42},
+{name:'S Blacktown and Holroyd',value:1162.68}
+                ]
+            }
+        },
+		{
+            name: 'Campbelltown',
+            type: 'map',
+            mapType: 'super',
+            data:[],
+            markLine : {
+                smooth:true,
+                effect : {
+                    show: true,
+                    scaleSize: 1,
+                    period: 30,
+                    color: '#fff',
+                    shadowBlur: 10
+                },
+                itemStyle : {
+                    normal: {
+                        borderWidth:1,
+                        lineStyle: {
+                            type: 'solid',
+                            shadowBlur: 10
+                        }
+                    }
+                },
+                data : [
+[{name: 'Campbelltown'}, {name:'Airport',value:202.56}],
+[{name: 'Campbelltown'}, {name:'Auburn and SE Parramatta',value:1147.56}],
+[{name: 'Campbelltown'}, {name:'Canada Bay, Strathfield and Ashfield',value:1552.48}],
+[{name: 'Campbelltown'}, {name:'CBD',value:4237.31}],
+[{name: 'Campbelltown'}, {name:'Eastern Suburbs',value:644.46}],
+[{name: 'Campbelltown'}, {name:'Inner West and South Sydney',value:2043.44}],
+[{name: 'Campbelltown'}, {name:'Lane Cove and Willoughby',value:419.47}],
+[{name: 'Campbelltown'}, {name:'North Sydney and Mosman',value:720.76}],
+[{name: 'Campbelltown'}, {name:'NW Parramatta and N Blacktown',value:88.17}],
+[{name: 'Campbelltown'}, {name:'Parramatta (Inner)',value:618.61}],
+[{name: 'Campbelltown'}, {name:'Ryde - Hunters Hill',value:608.76}],
+[{name: 'Campbelltown'}, {name:'S Blacktown and Holroyd',value:109.8}]
+                ]
+            },
+            markPoint : {
+                symbol:'emptyCircle',
+                symbolSize : function (v){
+                    return 10 + v/2000
+                },
+                effect : {
+                    show: true,
+                    shadowBlur : 0
+                },
+                itemStyle:{
+                    normal:{
+                        label:{show:false}
+                    },
+                    emphasis: {
+                        label:{position:'top'}
+                    }
+                },
+                data : [
+{name:'Airport',value:202.56},
+{name:'Auburn and SE Parramatta',value:1147.56},
+{name:'Canada Bay, Strathfield and Ashfield',value:1552.48},
+{name:'CBD',value:4237.31},
+{name:'Eastern Suburbs',value:644.46},
+{name:'Inner West and South Sydney',value:2043.44},
+{name:'Lane Cove and Willoughby',value:419.47},
+{name:'North Sydney and Mosman',value:720.76},
+{name:'NW Parramatta and N Blacktown',value:88.17},
+{name:'Parramatta (Inner)',value:618.61},
+{name:'Ryde - Hunters Hill',value:608.76},
+{name:'S Blacktown and Holroyd',value:109.8}
+                ]
+            }
+        },
+		{
+            name: 'Canada Bay, Strathfield and Ashfield',
+            type: 'map',
+            mapType: 'super',
+            data:[],
+            markLine : {
+                smooth:true,
+                effect : {
+                    show: true,
+                    scaleSize: 1,
+                    period: 30,
+                    color: '#fff',
+                    shadowBlur: 10
+                },
+                itemStyle : {
+                    normal: {
+                        borderWidth:1,
+                        lineStyle: {
+                            type: 'solid',
+                            shadowBlur: 10
+                        }
+                    }
+                },
+                data : [
+[{name: 'Canada Bay, Strathfield and Ashfield'}, {name:'Airport',value:1075.57}],
+[{name: 'Canada Bay, Strathfield and Ashfield'}, {name:'Auburn and SE Parramatta',value:530.69}],
+[{name: 'Canada Bay, Strathfield and Ashfield'}, {name:'Bankstown',value:4432.82}],
+[{name: 'Canada Bay, Strathfield and Ashfield'}, {name:'Campbelltown',value:1728.4}],
+[{name: 'Canada Bay, Strathfield and Ashfield'}, {name:'Canterbury, Hurstville and Rockdale',value:11537.32}],
+[{name: 'Canada Bay, Strathfield and Ashfield'}, {name:'CBD',value:1107.67}],
+[{name: 'Canada Bay, Strathfield and Ashfield'}, {name:'Eastern Suburbs',value:3651.11}],
+[{name: 'Canada Bay, Strathfield and Ashfield'}, {name:'External Zones-South',value:809.58}],
+[{name: 'Canada Bay, Strathfield and Ashfield'}, {name:'External Zones-South-East',value:866.44}],
+[{name: 'Canada Bay, Strathfield and Ashfield'}, {name:'Fairfield and E Liverpool',value:4827.64}],
+[{name: 'Canada Bay, Strathfield and Ashfield'}, {name:'Inner West and South Sydney',value:11107.26}],
+[{name: 'Canada Bay, Strathfield and Ashfield'}, {name:'Lane Cove and Willoughby',value:119.7}],
+[{name: 'Canada Bay, Strathfield and Ashfield'}, {name:'North Sydney and Mosman',value:74.99}],
+[{name: 'Canada Bay, Strathfield and Ashfield'}, {name:'Ryde - Hunters Hill',value:41.99}],
+[{name: 'Canada Bay, Strathfield and Ashfield'}, {name:'S Blacktown and Holroyd',value:35.32}],
+[{name: 'Canada Bay, Strathfield and Ashfield'}, {name:'Sutherland',value:2728.52}],
+[{name: 'Canada Bay, Strathfield and Ashfield'}, {name:'Wollondilly',value:1035.32}]
+                ]
+            },
+            markPoint : {
+                symbol:'emptyCircle',
+                symbolSize : function (v){
+                    return 10 + v/2000
+                },
+                effect : {
+                    show: true,
+                    shadowBlur : 0
+                },
+                itemStyle:{
+                    normal:{
+                        label:{show:false}
+                    },
+                    emphasis: {
+                        label:{position:'top'}
+                    }
+                },
+                data : [
+{name:'Airport',value:1075.57},
+{name:'Auburn and SE Parramatta',value:530.69},
+{name:'Bankstown',value:4432.82},
+{name:'Campbelltown',value:1728.4},
+{name:'Canterbury, Hurstville and Rockdale',value:11537.32},
+{name:'CBD',value:1107.67},
+{name:'Eastern Suburbs',value:3651.11},
+{name:'External Zones-South',value:809.58},
+{name:'External Zones-South-East',value:866.44},
+{name:'Fairfield and E Liverpool',value:4827.64},
+{name:'Inner West and South Sydney',value:11107.26},
+{name:'Lane Cove and Willoughby',value:119.7},
+{name:'North Sydney and Mosman',value:74.99},
+{name:'Ryde - Hunters Hill',value:41.99},
+{name:'S Blacktown and Holroyd',value:35.32},
+{name:'Sutherland',value:2728.52},
+{name:'Wollondilly',value:1035.32}
+                ]
+            }
+        },
+		{
+            name: 'Canterbury, Hurstville and Rockdale',
+            type: 'map',
+            mapType: 'super',
+            data:[],
+            markLine : {
+                smooth:true,
+                effect : {
+                    show: true,
+                    scaleSize: 1,
+                    period: 30,
+                    color: '#fff',
+                    shadowBlur: 10
+                },
+                itemStyle : {
+                    normal: {
+                        borderWidth:1,
+                        lineStyle: {
+                            type: 'solid',
+                            shadowBlur: 10
+                        }
+                    }
+                },
+                data : [
+[{name: 'Canterbury, Hurstville and Rockdale'}, {name:'Airport',value:38.3}],
+[{name: 'Canterbury, Hurstville and Rockdale'}, {name:'Auburn and SE Parramatta',value:3309.97}],
+[{name: 'Canterbury, Hurstville and Rockdale'}, {name:'Canada Bay, Strathfield and Ashfield',value:11577.72}],
+[{name: 'Canterbury, Hurstville and Rockdale'}, {name:'CBD',value:22931.77}],
+[{name: 'Canterbury, Hurstville and Rockdale'}, {name:'Eastern Suburbs',value:2400.87}],
+[{name: 'Canterbury, Hurstville and Rockdale'}, {name:'Fairfield and E Liverpool',value:289.9}],
+[{name: 'Canterbury, Hurstville and Rockdale'}, {name:'Inner West and South Sydney',value:11666.55}],
+[{name: 'Canterbury, Hurstville and Rockdale'}, {name:'Lane Cove and Willoughby',value:2858.32}],
+[{name: 'Canterbury, Hurstville and Rockdale'}, {name:'North Sydney and Mosman',value:4315.06}],
+[{name: 'Canterbury, Hurstville and Rockdale'}, {name:'NW Parramatta and N Blacktown',value:1894.5}],
+[{name: 'Canterbury, Hurstville and Rockdale'}, {name:'Parramatta (Inner)',value:2149.67}],
+[{name: 'Canterbury, Hurstville and Rockdale'}, {name:'Ryde - Hunters Hill',value:3512.7}],
+[{name: 'Canterbury, Hurstville and Rockdale'}, {name:'S Blacktown and Holroyd',value:2046.53}]
+                ]
+            },
+            markPoint : {
+                symbol:'emptyCircle',
+                symbolSize : function (v){
+                    return 10 + v/2000
+                },
+                effect : {
+                    show: true,
+                    shadowBlur : 0
+                },
+                itemStyle:{
+                    normal:{
+                        label:{show:false}
+                    },
+                    emphasis: {
+                        label:{position:'top'}
+                    }
+                },
+                data : [
+{name:'Airport',value:38.3},
+{name:'Auburn and SE Parramatta',value:3309.97},
+{name:'Canada Bay, Strathfield and Ashfield',value:11577.72},
+{name:'CBD',value:22931.77},
+{name:'Eastern Suburbs',value:2400.87},
+{name:'Fairfield and E Liverpool',value:289.9},
+{name:'Inner West and South Sydney',value:11666.55},
+{name:'Lane Cove and Willoughby',value:2858.32},
+{name:'North Sydney and Mosman',value:4315.06},
+{name:'NW Parramatta and N Blacktown',value:1894.5},
+{name:'Parramatta (Inner)',value:2149.67},
+{name:'Ryde - Hunters Hill',value:3512.7},
+{name:'S Blacktown and Holroyd',value:2046.53}
+                ]
+            }
+        },
+		{
+            name: 'CBD',
+            type: 'map',
+            mapType: 'super',
+            data:[],
+            markLine : {
+                smooth:true,
+                effect : {
+                    show: true,
+                    scaleSize: 1,
+                    period: 30,
+                    color: '#fff',
+                    shadowBlur: 10
+                },
+                itemStyle : {
+                    normal: {
+                        borderWidth:1,
+                        lineStyle: {
+                            type: 'solid',
+                            shadowBlur: 10							
+                        }
+                    }
+                },
+                data : [
+[{name: 'CBD'}, {name:'Airport',value:4304.27}],
+[{name: 'CBD'}, {name:'Auburn and SE Parramatta',value:2828.48}],
+[{name: 'CBD'}, {name:'Bankstown',value:5951.66}],
+[{name: 'CBD'}, {name:'Campbelltown',value:4255.4}],
+[{name: 'CBD'}, {name:'Canada Bay, Strathfield and Ashfield',value:832.98}],
+[{name: 'CBD'}, {name:'Canterbury, Hurstville and Rockdale',value:24705.57}],
+[{name: 'CBD'}, {name:'Eastern Suburbs',value:198.25}],
+[{name: 'CBD'}, {name:'External Zones-South',value:3104.06}],
+[{name: 'CBD'}, {name:'External Zones-South-East',value:1852.2}],
+[{name: 'CBD'}, {name:'Fairfield and E Liverpool',value:7709.05}],
+[{name: 'CBD'}, {name:'Inner West and South Sydney',value:12333.22}],
+[{name: 'CBD'}, {name:'NW Parramatta and N Blacktown',value:253.35}],
+[{name: 'CBD'}, {name:'Parramatta (Inner)',value:396.31}],
+[{name: 'CBD'}, {name:'S Blacktown and Holroyd',value:323.89}],
+[{name: 'CBD'}, {name:'Sutherland',value:7576.99}],
+[{name: 'CBD'}, {name:'Wollondilly',value:2328.39}]
+                ]
+            },
+            markPoint : {
+                symbol:'emptyCircle',
+                symbolSize : function (v){
+                    return 10 + v/2000
+                },
+                effect : {
+                    show: true,
+                    shadowBlur : 0
+                },
+                itemStyle:{
+                    normal:{
+                        label:{show:false}
+                    },
+                    emphasis: {
+                        label:{position:'top'}
+                    }
+                },
+                data : [
+{name:'Airport',value:4304.27},
+{name:'Auburn and SE Parramatta',value:2828.48},
+{name:'Bankstown',value:5951.66},
+{name:'Campbelltown',value:4255.4},
+{name:'Canada Bay, Strathfield and Ashfield',value:832.98},
+{name:'Canterbury, Hurstville and Rockdale',value:24705.57},
+{name:'Eastern Suburbs',value:198.25},
+{name:'External Zones-South',value:3104.06},
+{name:'External Zones-South-East',value:1852.2},
+{name:'Fairfield and E Liverpool',value:7709.05},
+{name:'Inner West and South Sydney',value:12333.22},
+{name:'NW Parramatta and N Blacktown',value:253.35},
+{name:'Parramatta (Inner)',value:396.31},
+{name:'S Blacktown and Holroyd',value:323.89},
+{name:'Sutherland',value:7576.99},
+{name:'Wollondilly',value:2328.39}
+                ]
+            }
+        },
+		{
+            name: 'Eastern Suburbs',
+            type: 'map',
+            mapType: 'super',
+            data:[],
+            markLine : {
+                smooth:true,
+                effect : {
+                    show: true,
+                    scaleSize: 1,
+                    period: 30,
+                    color: '#fff',
+                    shadowBlur: 10
+                },
+                itemStyle : {
+                    normal: {
+                        borderWidth:1,
+                        lineStyle: {
+                            type: 'solid',
+                            shadowBlur: 10
+                        }
+                    }
+                },
+                data : [
+[{name: 'Eastern Suburbs'}, {name:'Airport',value:756.35}],
+[{name: 'Eastern Suburbs'}, {name:'Auburn and SE Parramatta',value:1761.27}],
+[{name: 'Eastern Suburbs'}, {name:'Bankstown',value:1035.13}],
+[{name: 'Eastern Suburbs'}, {name:'Campbelltown',value:706.78}],
+[{name: 'Eastern Suburbs'}, {name:'Canada Bay, Strathfield and Ashfield',value:3988.47}],
+[{name: 'Eastern Suburbs'}, {name:'Canterbury, Hurstville and Rockdale',value:4027.58}],
+[{name: 'Eastern Suburbs'}, {name:'CBD',value:222.32}],
+[{name: 'Eastern Suburbs'}, {name:'External Zones-South',value:663.99}],
+[{name: 'Eastern Suburbs'}, {name:'External Zones-South-East',value:834.94}],
+[{name: 'Eastern Suburbs'}, {name:'Fairfield and E Liverpool',value:1682.53}],
+[{name: 'Eastern Suburbs'}, {name:'Inner West and South Sydney',value:3237.27}],
+[{name: 'Eastern Suburbs'}, {name:'Lane Cove and Willoughby',value:438.55}],
+[{name: 'Eastern Suburbs'}, {name:'NW Parramatta and N Blacktown',value:935.52}],
+[{name: 'Eastern Suburbs'}, {name:'Parramatta (Inner)',value:977.63}],
+[{name: 'Eastern Suburbs'}, {name:'Ryde - Hunters Hill',value:1081.94}],
+[{name: 'Eastern Suburbs'}, {name:'S Blacktown and Holroyd',value:839.69}],
+[{name: 'Eastern Suburbs'}, {name:'Sutherland',value:403.16}],
+[{name: 'Eastern Suburbs'}, {name:'Wollondilly',value:483.6}]
+                ]
+            },
+            markPoint : {
+                symbol:'emptyCircle',
+                symbolSize : function (v){
+                    return 10 + v/2000
+                },
+                effect : {
+                    show: true,
+                    shadowBlur : 0
+                },
+                itemStyle:{
+                    normal:{
+                        label:{show:false}
+                    },
+                    emphasis: {
+                        label:{position:'top'}
+                    }
+                },
+                data : [
+{name:'Airport',value:756.35},
+{name:'Auburn and SE Parramatta',value:1761.27},
+{name:'Bankstown',value:1035.13},
+{name:'Campbelltown',value:706.78},
+{name:'Canada Bay, Strathfield and Ashfield',value:3988.47},
+{name:'Canterbury, Hurstville and Rockdale',value:4027.58},
+{name:'CBD',value:222.32},
+{name:'External Zones-South',value:663.99},
+{name:'External Zones-South-East',value:834.94},
+{name:'Fairfield and E Liverpool',value:1682.53},
+{name:'Inner West and South Sydney',value:3237.27},
+{name:'Lane Cove and Willoughby',value:438.55},
+{name:'NW Parramatta and N Blacktown',value:935.52},
+{name:'Parramatta (Inner)',value:977.63},
+{name:'Ryde - Hunters Hill',value:1081.94},
+{name:'S Blacktown and Holroyd',value:839.69},
+{name:'Sutherland',value:403.16},
+{name:'Wollondilly',value:483.6}
+                ]
+            }
+        },
+		{
+            name: 'External Zones-South',
+            type: 'map',
+            mapType: 'super',
+            data:[],
+            markLine : {
+                smooth:true,
+                effect : {
+                    show: true,
+                    scaleSize: 1,
+                    period: 30,
+                    color: '#fff',
+                    shadowBlur: 10
+                },
+                itemStyle : {
+                    normal: {
+                        borderWidth:1,
+                        lineStyle: {
+                            type: 'solid',
+                            shadowBlur: 10
+                        }
+                    }
+                },
+                data : [
+[{name: 'External Zones-South'}, {name:'Auburn and SE Parramatta',value:712.25}],
+[{name: 'External Zones-South'}, {name:'Canada Bay, Strathfield and Ashfield',value:867.46}],
+[{name: 'External Zones-South'}, {name:'CBD',value:3012.51}],
+[{name: 'External Zones-South'}, {name:'Eastern Suburbs',value:576.03}],
+[{name: 'External Zones-South'}, {name:'Inner West and South Sydney',value:1353.83}],
+[{name: 'External Zones-South'}, {name:'Lane Cove and Willoughby',value:357.37}],
+[{name: 'External Zones-South'}, {name:'North Sydney and Mosman',value:626.09}],
+[{name: 'External Zones-South'}, {name:'NW Parramatta and N Blacktown',value:420.43}],
+[{name: 'External Zones-South'}, {name:'Parramatta (Inner)',value:386.18}],
+[{name: 'External Zones-South'}, {name:'Ryde - Hunters Hill',value:478.68}],
+[{name: 'External Zones-South'}, {name:'S Blacktown and Holroyd',value:634.09}]
+                ]
+            },
+            markPoint : {
+                symbol:'emptyCircle',
+                symbolSize : function (v){
+                    return 10 + v/2000
+                },
+                effect : {
+                    show: true,
+                    shadowBlur : 0
+                },
+                itemStyle:{
+                    normal:{
+                        label:{show:false}
+                    },
+                    emphasis: {
+                        label:{position:'top'}
+                    }
+                },
+                data : [
+{name:'Auburn and SE Parramatta',value:712.25},
+{name:'Canada Bay, Strathfield and Ashfield',value:867.46},
+{name:'CBD',value:3012.51},
+{name:'Eastern Suburbs',value:576.03},
+{name:'Inner West and South Sydney',value:1353.83},
+{name:'Lane Cove and Willoughby',value:357.37},
+{name:'North Sydney and Mosman',value:626.09},
+{name:'NW Parramatta and N Blacktown',value:420.43},
+{name:'Parramatta (Inner)',value:386.18},
+{name:'Ryde - Hunters Hill',value:478.68},
+{name:'S Blacktown and Holroyd',value:634.09}
+                ]
+            }
+        },
+		{
+            name: 'External Zones-South-East',
+            type: 'map',
+            mapType: 'super',
+            data:[],
+            markLine : {
+                smooth:true,
+                effect : {
+                    show: true,
+                    scaleSize: 1,
+                    period: 30,
+                    color: '#fff',
+                    shadowBlur: 10
+                },
+                itemStyle : {
+                    normal: {
+                        borderWidth:1,
+                        lineStyle: {
+                            type: 'solid',
+                            shadowBlur: 10
+                        }
+                    }
+                },
+                data : [
+[{name: 'External Zones-South-East'}, {name:'Airport',value:989.05}],
+[{name: 'External Zones-South-East'}, {name:'Auburn and SE Parramatta',value:505.27}],
+[{name: 'External Zones-South-East'}, {name:'Canada Bay, Strathfield and Ashfield',value:936.97}],
+[{name: 'External Zones-South-East'}, {name:'CBD',value:2491.17}],
+[{name: 'External Zones-South-East'}, {name:'Eastern Suburbs',value:969.27}],
+[{name: 'External Zones-South-East'}, {name:'Inner West and South Sydney',value:2423.49}],
+[{name: 'External Zones-South-East'}, {name:'Lane Cove and Willoughby',value:658.19}],
+[{name: 'External Zones-South-East'}, {name:'North Sydney and Mosman',value:841.68}],
+[{name: 'External Zones-South-East'}, {name:'Ryde - Hunters Hill',value:603.74}]
+                ]
+            },
+            markPoint : {
+                symbol:'emptyCircle',
+                symbolSize : function (v){
+                    return 10 + v/2000
+                },
+                effect : {
+                    show: true,
+                    shadowBlur : 0
+                },
+                itemStyle:{
+                    normal:{
+                        label:{show:false}
+                    },
+                    emphasis: {
+                        label:{position:'top'}
+                    }
+                },
+                data : [
+{name:'Airport',value:989.05},
+{name:'Auburn and SE Parramatta',value:505.27},
+{name:'Canada Bay, Strathfield and Ashfield',value:936.97},
+{name:'CBD',value:2491.17},
+{name:'Eastern Suburbs',value:969.27},
+{name:'Inner West and South Sydney',value:2423.49},
+{name:'Lane Cove and Willoughby',value:658.19},
+{name:'North Sydney and Mosman',value:841.68},
+{name:'Ryde - Hunters Hill',value:603.74}
+                ]
+            }
+        },
+		{
+            name: 'Fairfield and E Liverpool',
+            type: 'map',
+            mapType: 'super',
+            data:[],
+            markLine : {
+                smooth:true,
+                effect : {
+                    show: true,
+                    scaleSize: 1,
+                    period: 30,
+                    color: '#fff',
+                    shadowBlur: 10
+                },
+                itemStyle : {
+                    normal: {
+                        borderWidth:1,
+                        lineStyle: {
+                            type: 'solid',
+                            shadowBlur: 10
+                        }
+                    }
+                },
+                data : [
+[{name: 'Fairfield and E Liverpool'}, {name:'Airport',value:628.23}],
+[{name: 'Fairfield and E Liverpool'}, {name:'Auburn and SE Parramatta',value:1874.41}],
+[{name: 'Fairfield and E Liverpool'}, {name:'Canada Bay, Strathfield and Ashfield',value:3828.66}],
+[{name: 'Fairfield and E Liverpool'}, {name:'Canterbury, Hurstville and Rockdale',value:654.15}],
+[{name: 'Fairfield and E Liverpool'}, {name:'CBD',value:5655.41}],
+[{name: 'Fairfield and E Liverpool'}, {name:'Eastern Suburbs',value:1749.49}],
+[{name: 'Fairfield and E Liverpool'}, {name:'Inner West and South Sydney',value:6056.06}],
+[{name: 'Fairfield and E Liverpool'}, {name:'Lane Cove and Willoughby',value:1087.94}],
+[{name: 'Fairfield and E Liverpool'}, {name:'North Sydney and Mosman',value:1236.87}],
+[{name: 'Fairfield and E Liverpool'}, {name:'NW Parramatta and N Blacktown',value:490.11}],
+[{name: 'Fairfield and E Liverpool'}, {name:'Parramatta (Inner)',value:927.8}],
+[{name: 'Fairfield and E Liverpool'}, {name:'Ryde - Hunters Hill',value:1440.01}],
+[{name: 'Fairfield and E Liverpool'}, {name:'S Blacktown and Holroyd',value:412.94}],
+[{name: 'Fairfield and E Liverpool'}, {name:'Sutherland',value:314.65}]
+                ]
+            },
+            markPoint : {
+                symbol:'emptyCircle',
+                symbolSize : function (v){
+                    return 10 + v/2000
+                },
+                effect : {
+                    show: true,
+                    shadowBlur : 0
+                },
+                itemStyle:{
+                    normal:{
+                        label:{show:false}
+                    },
+                    emphasis: {
+                        label:{position:'top'}
+                    }
+                },
+                data : [
+{name:'Airport',value:628.23},
+{name:'Auburn and SE Parramatta',value:1874.41},
+{name:'Canada Bay, Strathfield and Ashfield',value:3828.66},
+{name:'Canterbury, Hurstville and Rockdale',value:654.15},
+{name:'CBD',value:5655.41},
+{name:'Eastern Suburbs',value:1749.49},
+{name:'Inner West and South Sydney',value:6056.06},
+{name:'Lane Cove and Willoughby',value:1087.94},
+{name:'North Sydney and Mosman',value:1236.87},
+{name:'NW Parramatta and N Blacktown',value:490.11},
+{name:'Parramatta (Inner)',value:927.8},
+{name:'Ryde - Hunters Hill',value:1440.01},
+{name:'S Blacktown and Holroyd',value:412.94},
+{name:'Sutherland',value:314.65}
+                ]
+            }
+        },
+		{
+            name: 'Inner West and South Sydney',
+            type: 'map',
+            mapType: 'super',
+            data:[],
+            markLine : {
+                smooth:true,
+                effect : {
+                    show: true,
+                    scaleSize: 1,
+                    period: 30,
+                    color: '#fff',
+                    shadowBlur: 10
+                },
+                itemStyle : {
+                    normal: {
+                        borderWidth:1,
+                        lineStyle: {
+                            type: 'solid',
+                            shadowBlur: 10
+                        }
+                    }
+                },
+                data : [
+[{name: 'Inner West and South Sydney'}, {name:'Airport',value:1922.39}],
+[{name: 'Inner West and South Sydney'}, {name:'Auburn and SE Parramatta',value:4609.58}],
+[{name: 'Inner West and South Sydney'}, {name:'Bankstown',value:3488.84}],
+[{name: 'Inner West and South Sydney'}, {name:'Campbelltown',value:2046.53}],
+[{name: 'Inner West and South Sydney'}, {name:'Canada Bay, Strathfield and Ashfield',value:10299.59}],
+[{name: 'Inner West and South Sydney'}, {name:'Canterbury, Hurstville and Rockdale',value:14732.79}],
+[{name: 'Inner West and South Sydney'}, {name:'CBD',value:6214.24}],
+[{name: 'Inner West and South Sydney'}, {name:'Eastern Suburbs',value:2652.3}],
+[{name: 'Inner West and South Sydney'}, {name:'External Zones-South',value:1792.67}],
+[{name: 'Inner West and South Sydney'}, {name:'External Zones-South-East',value:1495.36}],
+[{name: 'Inner West and South Sydney'}, {name:'Fairfield and E Liverpool',value:5784.32}],
+[{name: 'Inner West and South Sydney'}, {name:'Lane Cove and Willoughby',value:2909.29}],
+[{name: 'Inner West and South Sydney'}, {name:'North Sydney and Mosman',value:3101.71}],
+[{name: 'Inner West and South Sydney'}, {name:'NW Parramatta and N Blacktown',value:2634.1}],
+[{name: 'Inner West and South Sydney'}, {name:'Parramatta (Inner)',value:2331.42}],
+[{name: 'Inner West and South Sydney'}, {name:'Ryde - Hunters Hill',value:4014.52}],
+[{name: 'Inner West and South Sydney'}, {name:'S Blacktown and Holroyd',value:2045.52}],
+[{name: 'Inner West and South Sydney'}, {name:'Sutherland',value:3979.65}],
+[{name: 'Inner West and South Sydney'}, {name:'Wollondilly',value:1387.07}]
+                ]
+            },
+            markPoint : {
+                symbol:'emptyCircle',
+                symbolSize : function (v){
+                    return 10 + v/2000
+                },
+                effect : {
+                    show: true,
+                    shadowBlur : 0
+                },
+                itemStyle:{
+                    normal:{
+                        label:{show:false}
+                    },
+                    emphasis: {
+                        label:{position:'top'}
+                    }
+                },
+                data : [
+{name:'Airport',value:1922.39},
+{name:'Auburn and SE Parramatta',value:4609.58},
+{name:'Bankstown',value:3488.84},
+{name:'Campbelltown',value:2046.53},
+{name:'Canada Bay, Strathfield and Ashfield',value:10299.59},
+{name:'Canterbury, Hurstville and Rockdale',value:14732.79},
+{name:'CBD',value:6214.24},
+{name:'Eastern Suburbs',value:2652.3},
+{name:'External Zones-South',value:1792.67},
+{name:'External Zones-South-East',value:1495.36},
+{name:'Fairfield and E Liverpool',value:5784.32},
+{name:'Lane Cove and Willoughby',value:2909.29},
+{name:'North Sydney and Mosman',value:3101.71},
+{name:'NW Parramatta and N Blacktown',value:2634.1},
+{name:'Parramatta (Inner)',value:2331.42},
+{name:'Ryde - Hunters Hill',value:4014.52},
+{name:'S Blacktown and Holroyd',value:2045.52},
+{name:'Sutherland',value:3979.65},
+{name:'Wollondilly',value:1387.07}
+                ]
+            }
+        },
+		{
+            name: 'Lane Cove and Willoughby',
+            type: 'map',
+            mapType: 'super',
+            data:[],
+            markLine : {
+                smooth:true,
+                effect : {
+                    show: true,
+                    scaleSize: 1,
+                    period: 30,
+                    color: '#fff',
+                    shadowBlur: 10
+                },
+                itemStyle : {
+                    normal: {
+                        borderWidth:1,
+                        lineStyle: {
+                            type: 'solid',
+                            shadowBlur: 10
+                        }
+                    }
+                },
+                data : [
+[{name: 'Lane Cove and Willoughby'}, {name:'Airport',value:885.63}],
+[{name: 'Lane Cove and Willoughby'}, {name:'Auburn and SE Parramatta',value:228.44}],
+[{name: 'Lane Cove and Willoughby'}, {name:'Bankstown',value:711.83}],
+[{name: 'Lane Cove and Willoughby'}, {name:'Campbelltown',value:410.68}],
+[{name: 'Lane Cove and Willoughby'}, {name:'Canada Bay, Strathfield and Ashfield',value:0.54}],
+[{name: 'Lane Cove and Willoughby'}, {name:'Canterbury, Hurstville and Rockdale',value:2750.91}],
+[{name: 'Lane Cove and Willoughby'}, {name:'Eastern Suburbs',value:446.81}],
+[{name: 'Lane Cove and Willoughby'}, {name:'External Zones-South',value:321.47}],
+[{name: 'Lane Cove and Willoughby'}, {name:'External Zones-South-East',value:594.86}],
+[{name: 'Lane Cove and Willoughby'}, {name:'Fairfield and E Liverpool',value:969.02}],
+[{name: 'Lane Cove and Willoughby'}, {name:'Inner West and South Sydney',value:2959.39}],
+[{name: 'Lane Cove and Willoughby'}, {name:'Sutherland',value:1125.93}],
+[{name: 'Lane Cove and Willoughby'}, {name:'Wollondilly',value:293.08}]
+                ]
+            },
+            markPoint : {
+                symbol:'emptyCircle',
+                symbolSize : function (v){
+                    return 10 + v/2000
+                },
+                effect : {
+                    show: true,
+                    shadowBlur : 0
+                },
+                itemStyle:{
+                    normal:{
+                        label:{show:false}
+                    },
+                    emphasis: {
+                        label:{position:'top'}
+                    }
+                },
+                data : [
+{name:'Airport',value:885.63},
+{name:'Auburn and SE Parramatta',value:228.44},
+{name:'Bankstown',value:711.83},
+{name:'Campbelltown',value:410.68},
+{name:'Canada Bay, Strathfield and Ashfield',value:0.54},
+{name:'Canterbury, Hurstville and Rockdale',value:2750.91},
+{name:'Eastern Suburbs',value:446.81},
+{name:'External Zones-South',value:321.47},
+{name:'External Zones-South-East',value:594.86},
+{name:'Fairfield and E Liverpool',value:969.02},
+{name:'Inner West and South Sydney',value:2959.39},
+{name:'Sutherland',value:1125.93},
+{name:'Wollondilly',value:293.08}
+                ]
+            }
+        },
+		{
+            name: 'North Sydney and Mosman',
+            type: 'map',
+            mapType: 'super',
+            data:[],
+            markLine : {
+                smooth:true,
+                effect : {
+                    show: true,
+                    scaleSize: 1,
+                    period: 30,
+                    color: '#fff',
+                    shadowBlur: 10
+                },
+                itemStyle : {
+                    normal: {
+                        borderWidth:1,
+                        lineStyle: {
+                            type: 'solid',
+                            shadowBlur: 10
+                        }
+                    }
+                },
+                data : [
+[{name: 'North Sydney and Mosman'}, {name:'Airport',value:1727.35}],
+[{name: 'North Sydney and Mosman'}, {name:'Auburn and SE Parramatta',value:256.72}],
+[{name: 'North Sydney and Mosman'}, {name:'Bankstown',value:1139.63}],
+[{name: 'North Sydney and Mosman'}, {name:'Campbelltown',value:768.54}],
+[{name: 'North Sydney and Mosman'}, {name:'Canada Bay, Strathfield and Ashfield',value:1.02}],
+[{name: 'North Sydney and Mosman'}, {name:'Canterbury, Hurstville and Rockdale',value:4301.91}],
+[{name: 'North Sydney and Mosman'}, {name:'External Zones-South',value:614.41}],
+[{name: 'North Sydney and Mosman'}, {name:'External Zones-South-East',value:904.77}],
+[{name: 'North Sydney and Mosman'}, {name:'Fairfield and E Liverpool',value:1395.44}],
+[{name: 'North Sydney and Mosman'}, {name:'Inner West and South Sydney',value:3898.92}],
+[{name: 'North Sydney and Mosman'}, {name:'Sutherland',value:1249.84}],
+[{name: 'North Sydney and Mosman'}, {name:'Wollondilly',value:506.69}]
+                ]
+            },
+            markPoint : {
+                symbol:'emptyCircle',
+                symbolSize : function (v){
+                    return 10 + v/2000
+                },
+                effect : {
+                    show: true,
+                    shadowBlur : 0
+                },
+                itemStyle:{
+                    normal:{
+                        label:{show:false}
+                    },
+                    emphasis: {
+                        label:{position:'top'}
+                    }
+                },
+                data : [
+{name:'Airport',value:1727.35},
+{name:'Auburn and SE Parramatta',value:256.72},
+{name:'Bankstown',value:1139.63},
+{name:'Campbelltown',value:768.54},
+{name:'Canada Bay, Strathfield and Ashfield',value:1.02},
+{name:'Canterbury, Hurstville and Rockdale',value:4301.91},
+{name:'External Zones-South',value:614.41},
+{name:'External Zones-South-East',value:904.77},
+{name:'Fairfield and E Liverpool',value:1395.44},
+{name:'Inner West and South Sydney',value:3898.92},
+{name:'Sutherland',value:1249.84},
+{name:'Wollondilly',value:506.69}
+                ]
+            }
+        },
+		{
+            name: 'NW Parramatta and N Blacktown',
+            type: 'map',
+            mapType: 'super',
+            data:[],
+            markLine : {
+                smooth:true,
+                effect : {
+                    show: true,
+                    scaleSize: 1,
+                    period: 30,
+                    color: '#fff',
+                    shadowBlur: 10
+                },
+                itemStyle : {
+                    normal: {
+                        borderWidth:1,
+                        lineStyle: {
+                            type: 'solid',
+                            shadowBlur: 10
+                        }
+                    }
+                },
+                data : [
+[{name: 'NW Parramatta and N Blacktown'}, {name:'Airport',value:465.97}],
+[{name: 'NW Parramatta and N Blacktown'}, {name:'Auburn and SE Parramatta',value:47.33}],
+[{name: 'NW Parramatta and N Blacktown'}, {name:'Bankstown',value:1078.42}],
+[{name: 'NW Parramatta and N Blacktown'}, {name:'Campbelltown',value:301.24}],
+[{name: 'NW Parramatta and N Blacktown'}, {name:'Canterbury, Hurstville and Rockdale',value:1816.98}],
+[{name: 'NW Parramatta and N Blacktown'}, {name:'Eastern Suburbs',value:858.67}],
+[{name: 'NW Parramatta and N Blacktown'}, {name:'External Zones-South',value:256.96}],
+[{name: 'NW Parramatta and N Blacktown'}, {name:'External Zones-South-East',value:205.55}],
+[{name: 'NW Parramatta and N Blacktown'}, {name:'Fairfield and E Liverpool',value:810.22}],
+[{name: 'NW Parramatta and N Blacktown'}, {name:'Inner West and South Sydney',value:2525.83}],
+[{name: 'NW Parramatta and N Blacktown'}, {name:'Sutherland',value:653.86}],
+[{name: 'NW Parramatta and N Blacktown'}, {name:'Wollondilly',value:77.56}]
+                ]
+            },
+            markPoint : {
+                symbol:'emptyCircle',
+                symbolSize : function (v){
+                    return 10 + v/2000
+                },
+                effect : {
+                    show: true,
+                    shadowBlur : 0
+                },
+                itemStyle:{
+                    normal:{
+                        label:{show:false}
+                    },
+                    emphasis: {
+                        label:{position:'top'}
+                    }
+                },
+                data : [
+{name:'Airport',value:465.97},
+{name:'Auburn and SE Parramatta',value:47.33},
+{name:'Bankstown',value:1078.42},
+{name:'Campbelltown',value:301.24},
+{name:'Canterbury, Hurstville and Rockdale',value:1816.98},
+{name:'Eastern Suburbs',value:858.67},
+{name:'External Zones-South',value:256.96},
+{name:'External Zones-South-East',value:205.55},
+{name:'Fairfield and E Liverpool',value:810.22},
+{name:'Inner West and South Sydney',value:2525.83},
+{name:'Sutherland',value:653.86},
+{name:'Wollondilly',value:77.56}
+                ]
+            }
+        },
+		{
+            name: 'Parramatta (Inner)',
+            type: 'map',
+            mapType: 'super',
+            data:[],
+            markLine : {
+                smooth:true,
+                effect : {
+                    show: true,
+                    scaleSize: 1,
+                    period: 30,
+                    color: '#fff',
+                    shadowBlur: 10
+                },
+                itemStyle : {
+                    normal: {
+                        borderWidth:1,
+                        lineStyle: {
+                            type: 'solid',
+                            shadowBlur: 10
+                        }
+                    }
+                },
+                data : [
+[{name: 'Parramatta (Inner)'}, {name:'Airport',value:342.3}],
+[{name: 'Parramatta (Inner)'}, {name:'Bankstown',value:892.76}],
+[{name: 'Parramatta (Inner)'}, {name:'Campbelltown',value:1028.98}],
+[{name: 'Parramatta (Inner)'}, {name:'Canterbury, Hurstville and Rockdale',value:2139.4}],
+[{name: 'Parramatta (Inner)'}, {name:'Eastern Suburbs',value:723.53}],
+[{name: 'Parramatta (Inner)'}, {name:'External Zones-South',value:315.71}],
+[{name: 'Parramatta (Inner)'}, {name:'External Zones-South-East',value:320.41}],
+[{name: 'Parramatta (Inner)'}, {name:'Fairfield and E Liverpool',value:2362.65}],
+[{name: 'Parramatta (Inner)'}, {name:'Inner West and South Sydney',value:2263.96}],
+[{name: 'Parramatta (Inner)'}, {name:'Sutherland',value:864.25}],
+[{name: 'Parramatta (Inner)'}, {name:'Wollondilly',value:456.1}]
+                ]
+            },
+            markPoint : {
+                symbol:'emptyCircle',
+                symbolSize : function (v){
+                    return 10 + v/2000
+                },
+                effect : {
+                    show: true,
+                    shadowBlur : 0
+                },
+                itemStyle:{
+                    normal:{
+                        label:{show:false}
+                    },
+                    emphasis: {
+                        label:{position:'top'}
+                    }
+                },
+                data : [
+{name:'Airport',value:342.3},
+{name:'Bankstown',value:892.76},
+{name:'Campbelltown',value:1028.98},
+{name:'Canterbury, Hurstville and Rockdale',value:2139.4},
+{name:'Eastern Suburbs',value:723.53},
+{name:'External Zones-South',value:315.71},
+{name:'External Zones-South-East',value:320.41},
+{name:'Fairfield and E Liverpool',value:2362.65},
+{name:'Inner West and South Sydney',value:2263.96},
+{name:'Sutherland',value:864.25},
+{name:'Wollondilly',value:456.1},
+
+                ]
+            }
+        },
+		{
+            name: 'Ryde - Hunters Hill',
+            type: 'map',
+            mapType: 'super',
+            data:[],
+            markLine : {
+                smooth:true,
+                effect : {
+                    show: true,
+                    scaleSize: 1,
+                    period: 30,
+                    color: '#fff',
+                    shadowBlur: 10
+                },
+                itemStyle : {
+                    normal: {
+                        borderWidth:1,
+                        lineStyle: {
+                            type: 'solid',
+                            shadowBlur: 10
+                        }
+                    }
+                },
+                data : [
+[{name: 'Ryde - Hunters Hill'}, {name:'Airport',value:794.28}],
+[{name: 'Ryde - Hunters Hill'}, {name:'Auburn and SE Parramatta',value:411.29}],
+[{name: 'Ryde - Hunters Hill'}, {name:'Bankstown',value:1480.47}],
+[{name: 'Ryde - Hunters Hill'}, {name:'Campbelltown',value:576.25}],
+[{name: 'Ryde - Hunters Hill'}, {name:'Canada Bay, Strathfield and Ashfield',value:0.37}],
+[{name: 'Ryde - Hunters Hill'}, {name:'Canterbury, Hurstville and Rockdale',value:3398.14}],
+[{name: 'Ryde - Hunters Hill'}, {name:'Eastern Suburbs',value:1006.45}],
+[{name: 'Ryde - Hunters Hill'}, {name:'External Zones-South',value:407.37}],
+[{name: 'Ryde - Hunters Hill'}, {name:'External Zones-South-East',value:456.45}],
+[{name: 'Ryde - Hunters Hill'}, {name:'Fairfield and E Liverpool',value:966.9}],
+[{name: 'Ryde - Hunters Hill'}, {name:'Inner West and South Sydney',value:3876.58}],
+[{name: 'Ryde - Hunters Hill'}, {name:'Sutherland',value:1072.02}],
+[{name: 'Ryde - Hunters Hill'}, {name:'Wollondilly',value:355.46}]
+                ]
+            },
+            markPoint : {
+                symbol:'emptyCircle',
+                symbolSize : function (v){
+                    return 10 + v/2000
+                },
+                effect : {
+                    show: true,
+                    shadowBlur : 0
+                },
+                itemStyle:{
+                    normal:{
+                        label:{show:false}
+                    },
+                    emphasis: {
+                        label:{position:'top'}
+                    }
+                },
+                data : [
+{name:'Airport',value:794.28},
+{name:'Auburn and SE Parramatta',value:411.29},
+{name:'Bankstown',value:1480.47},
+{name:'Campbelltown',value:576.25},
+{name:'Canada Bay, Strathfield and Ashfield',value:0.37},
+{name:'Canterbury, Hurstville and Rockdale',value:3398.14},
+{name:'Eastern Suburbs',value:1006.45},
+{name:'External Zones-South',value:407.37},
+{name:'External Zones-South-East',value:456.45},
+{name:'Fairfield and E Liverpool',value:966.9},
+{name:'Inner West and South Sydney',value:3876.58},
+{name:'Sutherland',value:1072.02},
+{name:'Wollondilly',value:355.46}
+                ]
+            }
+        },
+		{
+            name: 'S Blacktown and Holroyd',
+            type: 'map',
+            mapType: 'super',
+            data:[],
+            markLine : {
+                smooth:true,
+                effect : {
+                    show: true,
+                    scaleSize: 1,
+                    period: 30,
+                    color: '#fff',
+                    shadowBlur: 10
+                },
+                itemStyle : {
+                    normal: {
+                        borderWidth:1,
+                        lineStyle: {
+                            type: 'solid',
+                            shadowBlur: 10
+                        }
+                    }
+                },
+                data : [
+[{name: 'S Blacktown and Holroyd'}, {name:'Airport',value:399.71}],
+[{name: 'S Blacktown and Holroyd'}, {name:'Bankstown',value:1149.24}],
+[{name: 'S Blacktown and Holroyd'}, {name:'Campbelltown',value:332.19}],
+[{name: 'S Blacktown and Holroyd'}, {name:'Canterbury, Hurstville and Rockdale',value:2050.62}],
+[{name: 'S Blacktown and Holroyd'}, {name:'Eastern Suburbs',value:779.85}],
+[{name: 'S Blacktown and Holroyd'}, {name:'External Zones-South',value:386.85}],
+[{name: 'S Blacktown and Holroyd'}, {name:'External Zones-South-East',value:155.37}],
+[{name: 'S Blacktown and Holroyd'}, {name:'Fairfield and E Liverpool',value:1030.06}],
+[{name: 'S Blacktown and Holroyd'}, {name:'Inner West and South Sydney',value:2057.38}],
+[{name: 'S Blacktown and Holroyd'}, {name:'Sutherland',value:905.86}],
+[{name: 'S Blacktown and Holroyd'}, {name:'Wollondilly',value:183.86}]
+                ]
+            },
+            markPoint : {
+                symbol:'emptyCircle',
+                symbolSize : function (v){
+                    return 10 + v/2000
+                },
+                effect : {
+                    show: true,
+                    shadowBlur : 0
+                },
+                itemStyle:{
+                    normal:{
+                        label:{show:false}
+                    },
+                    emphasis: {
+                        label:{position:'top'}
+                    }
+                },
+                data : [
+{name:'Airport',value:399.71},
+{name:'Bankstown',value:1149.24},
+{name:'Campbelltown',value:332.19},
+{name:'Canterbury, Hurstville and Rockdale',value:2050.62},
+{name:'Eastern Suburbs',value:779.85},
+{name:'External Zones-South',value:386.85},
+{name:'External Zones-South-East',value:155.37},
+{name:'Fairfield and E Liverpool',value:1030.06},
+{name:'Inner West and South Sydney',value:2057.38},
+{name:'Sutherland',value:905.86},
+{name:'Wollondilly',value:183.86}
+                ]
+            }
+        },
+		{
+            name: 'Sutherland',
+            type: 'map',
+            mapType: 'super',
+            data:[],
+            markLine : {
+                smooth:true,
+                effect : {
+                    show: true,
+                    scaleSize: 1,
+                    period: 30,
+                    color: '#fff',
+                    shadowBlur: 10
+                },
+                itemStyle : {
+                    normal: {
+                        borderWidth:1,
+                        lineStyle: {
+                            type: 'solid',
+                            shadowBlur: 10
+                        }
+                    }
+                },
+                data : [
+[{name: 'Sutherland'}, {name:'Auburn and SE Parramatta',value:1530.81}],
+[{name: 'Sutherland'}, {name:'Canada Bay, Strathfield and Ashfield',value:2602.57}],
+[{name: 'Sutherland'}, {name:'CBD',value:8641.72}],
+[{name: 'Sutherland'}, {name:'Fairfield and E Liverpool',value:111.14}],
+[{name: 'Sutherland'}, {name:'Inner West and South Sydney',value:3969.43}],
+[{name: 'Sutherland'}, {name:'Lane Cove and Willoughby',value:1140.97}],
+[{name: 'Sutherland'}, {name:'North Sydney and Mosman',value:1533.32}],
+[{name: 'Sutherland'}, {name:'NW Parramatta and N Blacktown',value:709.57}],
+[{name: 'Sutherland'}, {name:'Parramatta (Inner)',value:850.68}],
+[{name: 'Sutherland'}, {name:'Ryde - Hunters Hill',value:1178.43}],
+[{name: 'Sutherland'}, {name:'S Blacktown and Holroyd',value:897.24}]
+                ]
+            },
+            markPoint : {
+                symbol:'emptyCircle',
+                symbolSize : function (v){
+                    return 10 + v/2000
+                },
+                effect : {
+                    show: true,
+                    shadowBlur : 0
+                },
+                itemStyle:{
+                    normal:{
+                        label:{show:false}
+                    },
+                    emphasis: {
+                        label:{position:'top'}
+                    }
+                },
+                data : [
+{name:'Auburn and SE Parramatta',value:1530.81},
+{name:'Canada Bay, Strathfield and Ashfield',value:2602.57},
+{name:'CBD',value:8641.72},
+{name:'Fairfield and E Liverpool',value:111.14},
+{name:'Inner West and South Sydney',value:3969.43},
+{name:'Lane Cove and Willoughby',value:1140.97},
+{name:'North Sydney and Mosman',value:1533.32},
+{name:'NW Parramatta and N Blacktown',value:709.57},
+{name:'Parramatta (Inner)',value:850.68},
+{name:'Ryde - Hunters Hill',value:1178.43},
+{name:'S Blacktown and Holroyd',value:897.24}
+                ]
+            }
+        },
+		{
+            name: 'Wollondilly',
+            type: 'map',
+            mapType: 'super',
+            data:[],
+            markLine : {
+                smooth:true,
+                effect : {
+                    show: true,
+                    scaleSize: 1,
+                    period: 30,
+                    color: '#fff',
+                    shadowBlur: 10
+                },
+                itemStyle : {
+                    normal: {
+                        borderWidth:1,
+                        lineStyle: {
+                            type: 'solid',
+                            shadowBlur: 10
+                        }
+                    }
+                },
+                data : [
+[{name: 'Wollondilly'}, {name:'Airport',value:400.26}],
+[{name: 'Wollondilly'}, {name:'Auburn and SE Parramatta',value:479.15}],
+[{name: 'Wollondilly'}, {name:'Canada Bay, Strathfield and Ashfield',value:1045.2}],
+[{name: 'Wollondilly'}, {name:'Canterbury, Hurstville and Rockdale',value:12.75}],
+[{name: 'Wollondilly'}, {name:'CBD',value:2192.72}],
+[{name: 'Wollondilly'}, {name:'Eastern Suburbs',value:530.08}],
+[{name: 'Wollondilly'}, {name:'Inner West and South Sydney',value:1808.4}],
+[{name: 'Wollondilly'}, {name:'Lane Cove and Willoughby',value:345.41}],
+[{name: 'Wollondilly'}, {name:'North Sydney and Mosman',value:506.07}],
+[{name: 'Wollondilly'}, {name:'NW Parramatta and N Blacktown',value:80.46}],
+[{name: 'Wollondilly'}, {name:'Parramatta (Inner)',value:94.55}],
+[{name: 'Wollondilly'}, {name:'Ryde - Hunters Hill',value:461.18}],
+[{name: 'Wollondilly'}, {name:'S Blacktown and Holroyd',value:106.01}]
+                ]
+            },
+            markPoint : {
+                symbol:'emptyCircle',
+                symbolSize : function (v){
+                    return 10 + v/2000
+                },
+                effect : {
+                    show: true,
+                    shadowBlur : 0
+                },
+                itemStyle:{
+                    normal:{
+                        label:{show:false}
+                    },
+                    emphasis: {
+                        label:{position:'top'}
+                    }
+                },
+                data : [
+{name:'Airport',value:400.26},
+{name:'Auburn and SE Parramatta',value:479.15},
+{name:'Canada Bay, Strathfield and Ashfield',value:1045.2},
+{name:'Canterbury, Hurstville and Rockdale',value:12.75},
+{name:'CBD',value:2192.72},
+{name:'Eastern Suburbs',value:530.08},
+{name:'Inner West and South Sydney',value:1808.4},
+{name:'Lane Cove and Willoughby',value:345.41},
+{name:'North Sydney and Mosman',value:506.07},
+{name:'NW Parramatta and N Blacktown',value:80.46},
+{name:'Parramatta (Inner)',value:94.55},
+{name:'Ryde - Hunters Hill',value:461.18},
+{name:'S Blacktown and Holroyd',value:106.01}
+                ]
+            }
+        },
+    ]
+};
+
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);	
+}
+
+ window.onresize = function() {
+      myChart.resize();
+  }
+
+} );
+
+       </script>
+   </body>
+</html>

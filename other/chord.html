@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+     <body style="height: 100%; margin: 0">
+     <div id="container" style="height: 100vh"></div>	   
+	
+	  <script src="lib/echarts.js"></script>    
+     <script src="lib/jquery.min.js"></script>     	 
+     <script type="text/javascript"> 
+	   
+ require.config({
+        paths: {
+            echarts: './lib'
+        }		   
+    });
+	
+	 require( 
+            [
+                'echarts',
+                'echarts/chart/chord'				
+            ],
+			
+			function (ec) {
+			
+var dom = document.getElementById("container");
+var myChart = ec.init(dom);
+
+var option = {  
+    backgroundColor: '#1b1b1b',  
+    title : {
+        text : 'Telstra Top 10 OD Pairs',  
+        x: 'center',		
+        y:'top',
+		textStyle : {
+            color: '#fff'
+        }
+    },  
+    tooltip : {
+        trigger: 'item',
+        formatter: function (params) {
+            if (params.indicator2) { // is edge
+                return params.value.weight;
+            } else {// is node
+                return params.name
+            }
+        }
+    },
+    legend : {
+        data : [
+'CBD',
+'Eastern Suburbs',
+'Inner West and South Sydney',
+'Canada Bay, Strathfield and Ashfield',
+'Canterbury, Hurstville and Rockdale',
+'Sutherland',
+'Bankstown',
+'Auburn and SE Parramatta',
+'Fairfield and E Liverpool',
+'Ryde - Hunters Hill'
+        ],
+		textStyle : {
+            color: '#fff'
+        },
+        orient : 'vertical',
+        x : 'left'
+    },
+series : [        
+        {            
+            type: 'chord',  
+            sort : 'ascending',	
+  showScale : false,    			
+            showScaleText: true,
+            clockWise: false,
+            data: [
+{name: 'CBD'},
+{name: 'Eastern Suburbs'},
+{name: 'Inner West and South Sydney'},
+{name: 'Canada Bay, Strathfield and Ashfield'},
+{name: 'Canterbury, Hurstville and Rockdale'},
+{name: 'Sutherland'},
+{name: 'Bankstown'},
+{name: 'Auburn and SE Parramatta'},
+{name: 'Fairfield and E Liverpool'},
+{name: 'Ryde - Hunters Hill'}
+            ],
+			itemStyle : {
+                normal : {
+                    label : {                          
+                         show: true,						 
+                       textStyle : {
+            color: 'white',
+			fontSize: 12
+                          }
+                    }
+                }				
+            },
+            matrix: [
+[0,198.25,12333.22,832.98,24705.57,7576.99,5951.66,2828.48,7709.05,0],
+[222.32,0,3237.27,3988.47,4027.58,403.16,1035.13,1761.27,1682.53,1081.94],
+[6214.24,2652.3,11991.42,10299.59,14732.79,3979.65,3488.84,4609.58,5784.32,4014.52],
+[1107.67,3651.11,11107.26,196.25,11537.32,2728.52,4432.82,530.69,4827.64,41.99],
+[22931.77,2400.87,11666.55,11577.72,0,0,,3309.97,289.9,3512.7],
+[8641.72,0,3969.43,2602.57,0,0,0,1530.81,111.14,1178.43],
+[5687.86,1065.94,2817.18,4240.72,0,0,0,1650.97,0,1497.42],
+[929.77,1416.05,4547.9,552.69,3430.75,1583.31,1940.27,0,3387,575.81],
+[5655.41,1749.49,6056.06,3828.66,654.15,314.65,0,1874.41,0,1440.01],
+[0,1006.45,3876.58,0.37,3398.14,1072.02,1480.47,411.29,966.9,0]
+            ]
+        }
+    ]
+};
+
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+
+ window.onresize = function() {
+      myChart.resize();
+  }
+  
+  } );
+
+       </script>
+   </body>
+</html>

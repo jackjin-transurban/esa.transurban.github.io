@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+       <meta charset="utf-8">
+   </head>
+     <body style="height: 100%; margin: 0">
+     <div id="container" style="height: 100vh"></div>		        
+        	
+     <script src="lib/echarts.js"></script>    
+     <script src="lib/jquery.min.js"></script>   
+     <script src="data/timeOption.js"></script>
+     <script type="text/javascript">
+	 
+  require.config({
+        paths: {
+            echarts: './lib'
+        }		
+    });
+	
+	 require(
+            [
+                'echarts',
+                'echarts/chart/map'				
+            ],
+			
+			function (ec) {
+	
+var dom = document.getElementById("container");
+var myChart = ec.init(dom);
+
+					
+require('echarts/util/mapData/params').params.SA = {
+    getGeoJson: function (callback) {
+        $.getJSON('data/sa2.json',callback);
+    }
+};
+		
+var option = {    
+    timeline:{
+        data:[
+            '2011-01-01','2016-01-01','2021-01-01','2026-01-01',
+            '2031-01-01','2036-01-01','2041-01-01','2046-01-01'
+        ],
+        label : {
+            formatter : function(s) {
+                return s.slice(0, 4);
+            },
+			textStyle : {
+            color: '#fff'
+        }
+        },		
+        autoPlay : true,
+        playInterval : 1000
+    },
+    options:[
+        {
+            title : {
+                'text':'2011 SA2 Population',
+                'subtext':'DAE Economics',
+				textStyle : {
+            color: '#fff'
+        }
+            },
+			backgroundColor: '#1b1b1b',  
+            tooltip : {trigger: 'item'},
+            toolbox : {
+                'show':true, 
+                'feature':{
+                    'mark':{'show':true},
+                    'dataView':{'show':true,'readOnly':false},
+                    'restore':{'show':true},
+                    'saveAsImage':{'show':true}
+                }
+            },
+            dataRange: {
+                min: 0,
+                max : 50000,
+                text:['High','Low'], 
+                textStyle : {
+                     color: '#fff'
+                },				
+                calculable : true,
+                x: 'left',
+                color: ['orangered','yellow','lightskyblue']
+            },
+            series : [
+                {
+                    name:'Population',
+                    type:'map',	
+					mapType: 'SA', // 自定义扩展图表类型
+                    data: dataMap.dataPop['2011']
+                }
+            ]
+        },
+		{
+            title : {'text':'2016 SA2 Population'},
+            series : [
+                {'data': dataMap.dataPop['2016']}
+            ]
+        },
+        {
+            title : {'text':'2021 SA2 Population'},
+            series : [
+                {'data': dataMap.dataPop['2021']}
+            ]
+        },
+        {
+            title : {'text':'2026 SA2 Population'},
+            series : [
+                {'data': dataMap.dataPop['2026']}
+            ]
+        },
+        {
+            title : {'text':'2031 SA2 Population'},
+            series : [
+                {'data': dataMap.dataPop['2031']}
+            ]
+        },
+        {
+            title : {'text':'2036 SA2 Population'},
+            series : [
+                {'data': dataMap.dataPop['2036']}
+            ]
+        },
+        {
+            title : {'text':'2041 SA2 Population'},
+            series : [
+                {'data': dataMap.dataPop['2041']}
+            ]
+        },
+        {
+            title : {'text':'2046 SA2 Population'},
+            series : [
+                {'data': dataMap.dataPop['2046']}
+            ]
+        }
+    ]
+};
+                    
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);	
+}
+
+ window.onresize = function() {
+      myChart.resize();
+  }
+
+} );
+
+       </script>
+   </body>
+</html>
