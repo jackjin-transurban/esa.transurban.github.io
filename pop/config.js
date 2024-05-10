@@ -1107,19 +1107,107 @@ var config = {
             ,
             onChapterExit: [   				     
             ],          
-        },   		
+        },   
+		{
+            id: 'section-34',
+			title: 'Summary',
+			description: `
+			<p>In conclusion, Sydney's growth is predominantly in the West, Brisbane's in the South, and Melbourne experiences city-wide expansion. Brisbane's growth pattern is distinct, characterized by less infill development and more greenfield expansion on the outskirts, reflecting the city's higher reliance on cars, lower public transport utilization, and the allure of lifestyle assets (beaches and bays) distant from the city center.</p>
+			<img src="assets/img/chapters/sa4_growth.svg" width = "500"></div>			
+			<p>Conversely, Sydney and Melbourne are poised for substantial infill development in their middle suburbs. This trend leverages their robust public transport systems, urban-centric lifestyle amenities, and a more entrenched acceptance of denser living environments.</p>			
+			`,
+            location: {
+                center: [150.9, -33.86],
+                zoom: 10.5,
+                pitch: 0,
+                bearing: 0,
+				speed: 0.8
+            },   
+			mapAnimation: 'flyTo',
+			rotateAnimation: false,
+			callback: '',	
+			onChapterEnter: [      
+				{
+                    layer: 'pop_growth',
+                    opacity: 0
+                },
+                {
+                    layer: 'emp_growth',
+                    opacity: 0
+                },	
+				{
+                    layer: 'pop21',
+                    opacity: 0
+                },
+                {
+                    layer: 'pop41',
+                    opacity: 0
+                },	
+				{
+                    layer: 'emp21',
+                    opacity: 0
+                },
+                {
+                    layer: 'emp41',
+                    opacity: 0
+                },	
+				{
+                    layer: 'sa2',
+                    opacity: 1
+                }			
+            ]
+            ,
+            onChapterExit: [   				     
+            ],          
+        }, 
 		{
             id: 'section-22',
             title: '2020 GWA Population Overview',					
             description: `
-			<p>In 2021, the population of South East Queensland (SEQ) reached <b>3.78 million</b>.</p>
-			<p>The population distribution at the SA2 level within SEQ in 2021 was relatively balanced. This uniformity is attributed to the  <a href="https://www.abs.gov.au/census/guide-census-data/geography/census-geography-glossary#:~:text=Statistical%20Area%20Level%202%20(SA2),-Statistical%20Areas%20Level&text=They%20generally%20have%20a%20population,and%20catchments%20of%20rural%20areas.">SA2 boundaries being designed to encompass populations ranging from 3,000 to 25,000.</a>.</p>
-			<p> For a more detailed breakdown, users are encouraged to consult the <a href="https://tableau.transurban.com/#/site/StrategyandAnalysis/workbooks/4201/views.">Sep23 DAE commission forecast</a>, which offers an in-depth view of Brisbane's population distribution.</p>
-			<img src="assets/img/chapters/pop21.svg" width = "200"></div>			
+			<p>In 2020, the population of Greater Washington Area (GWA) reached <b>7.43 million</b>.</p>
+			<table border="1">
+			<tr>
+			<th style="text-align: left; font-weight: bold;">County</th>
+			<th style="text-align: left; font-weight: bold;">Population</th>
+			</tr>
+			
+			<tr>
+			<td  style="text-align: left;">Fairfax</td >
+			<td  style="text-align: left;">1,187,186</td >
+			</tr>
+			
+			<tr>
+			<td  style="text-align: left;">Montgomery</td >
+			<td  style="text-align: left;">1,061,242</td >
+			</tr>
+			
+			<tr>
+			<td  style="text-align: left;">Prince George's</td >
+			<td  style="text-align: left;">965,607</td >
+			</tr>
+			
+			<tr>
+			<td  style="text-align: left;">DC</td >
+			<td  style="text-align: left;">690,104</td >
+			</tr>
+			
+			<tr>
+			<td  style="text-align: left;">Anne Arundel</td >
+			<td  style="text-align: left;">588,768</td >
+			</tr>
+			
+			<tr>
+			<td  style="text-align: left;">Prince William</td >
+			<td  style="text-align: left;">542,606</td >
+			</tr>
+			
+			</table>
+			<p>Six counties exceed 500,000 residents: <b>Fairfax</b>, <b>Montgomery</b>, <b>Prince George's</b>, <b>DC</b>, <b>Anne Arundel</b>, and <b>Prince William</b>. The top three—Fairfax, Montgomery, and Prince George's—are centrally located, while DC, Anne Arundel, and Prince William Counties are on the outskirts.			</p>
+			<img src="assets/img/chapters/gwa_pop20.png" width = "150"></div>			
 			`,
 			location: {
                 center: [-77.175259, 38.791206],
-                zoom: 10,
+                zoom: 9,
                 pitch: 0,
                 bearing: 0,
 				speed: 0.8
@@ -1198,14 +1286,14 @@ var config = {
 			title: '2040 GWA Population Forecast',
             description: 
 			`
-			<p>By 2041, the population of South East Queensland (SEQ) is expected to reach approximately <b>5.36 million</b>.</p>
-			<p>The 2041 forecast highlights significant growth in specific areas: Ipswich, espetially <a href="https://www.statedevelopment.qld.gov.au/__data/assets/pdf_file/0019/12448/ripley-valley-development-scheme.pdf"> Ripley Valley</a>, Logan, especially <a href= "https://ehq-production-australia.s3.ap-southeast-2.amazonaws.com/626be8a07ab1dff7a6527537ebd4c6d9dd2269ed/documents/attachments/000/096/927/original/Draft_Park_Ridge_South_Chambers_Flat_Plan_Consultation_Booklet.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4KKNQAKIOR7VAOP4%2F20240411%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20240411T105608Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=a4b6fc4942130f0de86bd12f9daf0e4da0ec384efd3b2f531edce52b10d720b6"> Park Ridge and Chambers Flat</a>, along with <a href="https://communities.lendlease.com/contentassets/c60d7ad02f5e4358aadc17100206c06c/yar_mp_230322web_3-page.pdf"> Yarrabilba </a>, and in <a href="https://www.moretonbay.qld.gov.au/files/assets/public/v/1/services/building-development/mbrc-plan/background-studies/cabwest-structure-plan-summary.pdf"> Calboolture West</a>, which are all earmarked for extensive greenfield residential developments.</p> 
-			<img src="assets/img/chapters/pop41.svg" width = "200" height = "200"></div>
-			<p>Within the Brisbane Local Government Area (LGA), several SA2s such as <b>"Rochedale"</b>, <b>"Pallara - Willawong"</b> and <b>"Collingwood Park - Redbank"</b> are also projected to undergo substantial greenfield residential growth.</p>			
+			<p>By 2040, the population of Greater Washington Area (GWA) is expected to reach approximately <b>8.77 million</b>.</p>			
+			<p>The 2040 forecast indicates substantial population growth in certain key counties: <b>Fairfax</b>, <b>Montgomery</b>, <b>Loudoun</b>, <b>the District of Columbia</b>, <b>Prince William</b>, and <b>Prince George's</b>, all experiencing growth exceeding 100,000 residents. </p>
+			<p>The District of Columbia is situated within the inner modeling region, while Loudoun and Prince William are located in the Outer region. The remaining three—<b>Fairfax</b>, <b>Montgomery</b>, and <b>Prince George's</b>—reside within the middle modeling region.</p> 
+			<img src="assets/img/chapters/gwa_pop40.png" width = "150" height = "200"></div>						
 			`,
             location: {
                 center: [-77.175259, 38.791206],
-                zoom: 10,
+                zoom: 9,
                 pitch: 0,
                 bearing: 0,
 				speed: 0.8
@@ -1282,13 +1370,10 @@ var config = {
         {
             id: 'section-24',
 			title: 'GWA Population Growth Forecast 2020-2040',
-            description: `
-			<p>Brisbane demonstrates the most consistent growth among major Australian cities, with minimal fluctuations in its forecasts, suggesting a resilient response to the pandemic.</p>
-			<p>Current projections estimate Brisbane's population will rise from approximately <b>3.78m in 2021</b> to <b>5.36m by 2041</b>, an increase of <b>1.57m residents</b>.</p>
-			<img src="assets/img/chapters/qld_pop.svg" width = "500"></div>
-			<p>This growth aligns closely with previous DAE forecasts, indicating stable and predictable development trends.</p>
-			<img src="assets/img/chapters/pop.svg" width = "200"></div>
-			<p>For detailed information on key development hubs within South East Queensland, please refer to <a href="https://planning.statedevelopment.qld.gov.au/__data/assets/pdf_file/0019/83242/seq-regional-plan-shapingseq-update-2023-high-res.pdf"> Shaping SEQ</a> document.</p>
+            description: `			
+			<p>Current projections estimate that the population of the Greater Washington Area (GWA) will increase from approximately <b>7.43 million in 2020</b> to <b>8.77 million by 2040</b>, indicating a growth of <b>1.35 million residents</b>. The inner core counties are expected to have an annual growth rate of <b>0.8%</b>, while the middle ring counties indicate a growth of <b>0.6%</b>, and the outer ring counties have growth rates of <b>0.9%</b>. </p>
+			<img src="assets/img/chapters/gwa_pgrowth.png" width = "150"></div>
+			<p>"<b>Alexandria</b>" is the only inner ring county has an annual growth rate of greater than <b>1.1%</b>, while the "<b>District of Columbia</b>" has CAGA of <b>0.9%</b>.</p>
 			`,
             location: {
                 center: [-77.175259, 38.791206],
@@ -1370,10 +1455,51 @@ var config = {
             id: 'section-25',
             title: '2020 GWA Employment Overview',					
             description: `
-			<p>In 2021, the population of South East Queensland (SEQ) reached <b>3.78 million</b>.</p>
-			<p>The population distribution at the SA2 level within SEQ in 2021 was relatively balanced. This uniformity is attributed to the  <a href="https://www.abs.gov.au/census/guide-census-data/geography/census-geography-glossary#:~:text=Statistical%20Area%20Level%202%20(SA2),-Statistical%20Areas%20Level&text=They%20generally%20have%20a%20population,and%20catchments%20of%20rural%20areas.">SA2 boundaries being designed to encompass populations ranging from 3,000 to 25,000.</a>.</p>
-			<p> For a more detailed breakdown, users are encouraged to consult the <a href="https://tableau.transurban.com/#/site/StrategyandAnalysis/workbooks/4201/views.">Sep23 DAE commission forecast</a>, which offers an in-depth view of Brisbane's population distribution.</p>
-			<img src="assets/img/chapters/pop21.svg" width = "200"></div>			
+			<p>In 2020, the employment of Greater Washington Area (GWA) reached <b>4.32 million</b>.</p>
+			<table border="1">
+			<tr>
+			<th style="text-align: left; font-weight: bold;">County</th>
+			<th style="text-align: left; font-weight: bold;">Employment</th>
+			</tr>
+			
+			<tr>
+			<td  style="text-align: left;">District of Columbia, DC</td >
+			<td  style="text-align: left;">836,677</td >
+			</tr>
+			
+			<tr>
+			<td  style="text-align: left;">Fairfax County, VA</td >
+			<td  style="text-align: left;">728,031</td >
+			</tr>
+			
+			<tr>
+			<td  style="text-align: left;">Montgomery County, MD</td >
+			<td  style="text-align: left;">538,796</td >
+			</tr>
+			
+			<tr>
+			<td  style="text-align: left;">Anne Arundel County</td >
+			<td  style="text-align: left;">380,148</td >
+			</tr>
+			
+			<tr>
+			<td  style="text-align: left;">Prince George's County</td >
+			<td  style="text-align: left;">346,958</td >
+			</tr>
+			
+			<tr>
+			<td  style="text-align: left;">Arlington County, VA</td >
+			<td  style="text-align: left;">225,312</td >
+			</tr>
+			
+			<tr>
+			<td  style="text-align: left;">Howard County</td >
+			<td  style="text-align: left;">216,049</td >
+			</tr>
+			
+			</table>
+			<p>Seven counties, as shown in the table above, boast employment figures surpassing 200,000. Among them, the "<b>District of Columbia</b>" and "<b>Arlington</b>" stand as the sole representatives of the inner ring counties, while "<b>Anne Arundel</b>" and "<b>Howard</b>" lie on the outskirts. The remaining counties belong to the middle ring. </p>
+			<img src="assets/img/chapters/gwa_emp20.png" width = "150"></div>			
 			`,
 			location: {
                 center: [-77.175259, 38.791206],
@@ -1456,10 +1582,10 @@ var config = {
 			title: '2040 GWA Employment Forecast',
             description: 
 			`
-			<p>By 2041, the population of South East Queensland (SEQ) is expected to reach approximately <b>5.36 million</b>.</p>
-			<p>The 2041 forecast highlights significant growth in specific areas: Ipswich, espetially <a href="https://www.statedevelopment.qld.gov.au/__data/assets/pdf_file/0019/12448/ripley-valley-development-scheme.pdf"> Ripley Valley</a>, Logan, especially <a href= "https://ehq-production-australia.s3.ap-southeast-2.amazonaws.com/626be8a07ab1dff7a6527537ebd4c6d9dd2269ed/documents/attachments/000/096/927/original/Draft_Park_Ridge_South_Chambers_Flat_Plan_Consultation_Booklet.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4KKNQAKIOR7VAOP4%2F20240411%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20240411T105608Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=a4b6fc4942130f0de86bd12f9daf0e4da0ec384efd3b2f531edce52b10d720b6"> Park Ridge and Chambers Flat</a>, along with <a href="https://communities.lendlease.com/contentassets/c60d7ad02f5e4358aadc17100206c06c/yar_mp_230322web_3-page.pdf"> Yarrabilba </a>, and in <a href="https://www.moretonbay.qld.gov.au/files/assets/public/v/1/services/building-development/mbrc-plan/background-studies/cabwest-structure-plan-summary.pdf"> Calboolture West</a>, which are all earmarked for extensive greenfield residential developments.</p> 
-			<img src="assets/img/chapters/pop41.svg" width = "200" height = "200"></div>
-			<p>Within the Brisbane Local Government Area (LGA), several SA2s such as <b>"Rochedale"</b>, <b>"Pallara - Willawong"</b> and <b>"Collingwood Park - Redbank"</b> are also projected to undergo substantial greenfield residential growth.</p>			
+			<p>By 2040, the employment of Greater Washington Area (GWA) is expected to reach approximately <b>5.13 million</b>.</p>			
+			<p>The 2040 forecast indicates substantial employment growth in certain key counties: <b>Fairfax County</b>, <b>District of Columbia</b>, <b>Montgomery County</b>, all experiencing growth exceeding 80,000 jobs. </p>
+			<p>The "<b>District of Columbia</b>" is situated within the inner modeling region, while "<b>Fairfax</b>" and "<b>Montgomery</b>" are within the middle modeling region.</p> 
+			<img src="assets/img/chapters/gwa_emp40.png" width = "160"></div>					
 			`,
             location: {
                 center: [-77.175259, 38.791206],
@@ -1541,12 +1667,9 @@ var config = {
             id: 'section-27',
 			title: 'GWA Employment Growth Forecast 2020-2040',
             description: `
-			<p>Brisbane demonstrates the most consistent growth among major Australian cities, with minimal fluctuations in its forecasts, suggesting a resilient response to the pandemic.</p>
-			<p>Current projections estimate Brisbane's population will rise from approximately <b>3.78m in 2021</b> to <b>5.36m by 2041</b>, an increase of <b>1.57m residents</b>.</p>
-			<img src="assets/img/chapters/qld_pop.svg" width = "500"></div>
-			<p>This growth aligns closely with previous DAE forecasts, indicating stable and predictable development trends.</p>
-			<img src="assets/img/chapters/pop.svg" width = "200"></div>
-			<p>For detailed information on key development hubs within South East Queensland, please refer to <a href="https://planning.statedevelopment.qld.gov.au/__data/assets/pdf_file/0019/83242/seq-regional-plan-shapingseq-update-2023-high-res.pdf"> Shaping SEQ</a> document.</p>
+			<p>Current projections estimate that the employment of the Greater Washington Area (GWA) will increase from approximately <b>4.32 million in 2020</b> to <b>5.13 million by 2040</b>, indicating a growth of <b>806 million residents</b>. The inner core and middle ring counties are expected to have an annual growth rate of <b>0.8%</b>, and the outer ring counties have growth rates of <b>1.0%</b>. </p>
+			<img src="assets/img/chapters/gwa_egrowth.png" width = "200"></div>
+			<p>"<b>Arlington</b>" is the only inner ring county has an annual growth rate of greater than <b>1.1%</b>, while the "<b>District of Columbia</b>" has CAGA of <b>0.8%</b>.</p>
 			`,
             location: {
                 center: [-77.175259, 38.791206],
@@ -1628,10 +1751,44 @@ var config = {
             id: 'section-28',
             title: '2021 Montreal Population Overview',					
             description: `
-			<p>In 2021, the population of South East Queensland (SEQ) reached <b>3.78 million</b>.</p>
-			<p>The population distribution at the SA2 level within SEQ in 2021 was relatively balanced. This uniformity is attributed to the  <a href="https://www.abs.gov.au/census/guide-census-data/geography/census-geography-glossary#:~:text=Statistical%20Area%20Level%202%20(SA2),-Statistical%20Areas%20Level&text=They%20generally%20have%20a%20population,and%20catchments%20of%20rural%20areas.">SA2 boundaries being designed to encompass populations ranging from 3,000 to 25,000.</a>.</p>
-			<p> For a more detailed breakdown, users are encouraged to consult the <a href="https://tableau.transurban.com/#/site/StrategyandAnalysis/workbooks/4201/views.">Sep23 DAE commission forecast</a>, which offers an in-depth view of Brisbane's population distribution.</p>
-			<img src="assets/img/chapters/pop21.svg" width = "200"></div>			
+			<p>In 2021, the population of Montreal modelling area reached <b>4.29 million</b>.</p>
+			
+			<table border="1">
+			<tr>
+			<th style="text-align: left; font-weight: bold;">ER</th>
+			<th style="text-align: left; font-weight: bold;">Population</th>
+			</tr>
+			
+			<tr>
+			<td  style="text-align: left;">Montreal</td >
+			<td  style="text-align: left;">1,959,021</td >
+			</tr>
+			
+			<tr>
+			<td  style="text-align: left;">Monteregie</td >
+			<td  style="text-align: left;">1,166,000</td >
+			</tr>
+			
+			<tr>
+			<td  style="text-align: left;">Laval</td >
+			<td  style="text-align: left;">425,471</td >
+			</tr>
+			
+			<tr>
+			<td  style="text-align: left;">Laurentides</td >
+			<td  style="text-align: left;">424,172</td >
+			</tr>
+			
+			<tr>
+			<td  style="text-align: left;">Lanaudiere</td >
+			<td  style="text-align: left;">315,600</td >
+			</tr>				
+			
+			</table>
+			
+			<p>The populations of "<b>Montreal</b>" and "<b>Monteregie</b>" both surpass one million, while the populations of the other three Economic Regions (ERs) are all less than 400,000. </p>
+			
+			<img src="assets/img/chapters/mon_pop21.png" width = "150"></div>			
 			`,
 			location: {
                 center: [-73.616796, 45.629307],
@@ -1714,10 +1871,9 @@ var config = {
 			title: '2041 Montreal Population Forecast',
             description: 
 			`
-			<p>By 2041, the population of South East Queensland (SEQ) is expected to reach approximately <b>5.36 million</b>.</p>
-			<p>The 2041 forecast highlights significant growth in specific areas: Ipswich, espetially <a href="https://www.statedevelopment.qld.gov.au/__data/assets/pdf_file/0019/12448/ripley-valley-development-scheme.pdf"> Ripley Valley</a>, Logan, especially <a href= "https://ehq-production-australia.s3.ap-southeast-2.amazonaws.com/626be8a07ab1dff7a6527537ebd4c6d9dd2269ed/documents/attachments/000/096/927/original/Draft_Park_Ridge_South_Chambers_Flat_Plan_Consultation_Booklet.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4KKNQAKIOR7VAOP4%2F20240411%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20240411T105608Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=a4b6fc4942130f0de86bd12f9daf0e4da0ec384efd3b2f531edce52b10d720b6"> Park Ridge and Chambers Flat</a>, along with <a href="https://communities.lendlease.com/contentassets/c60d7ad02f5e4358aadc17100206c06c/yar_mp_230322web_3-page.pdf"> Yarrabilba </a>, and in <a href="https://www.moretonbay.qld.gov.au/files/assets/public/v/1/services/building-development/mbrc-plan/background-studies/cabwest-structure-plan-summary.pdf"> Calboolture West</a>, which are all earmarked for extensive greenfield residential developments.</p> 
-			<img src="assets/img/chapters/pop41.svg" width = "200" height = "200"></div>
-			<p>Within the Brisbane Local Government Area (LGA), several SA2s such as <b>"Rochedale"</b>, <b>"Pallara - Willawong"</b> and <b>"Collingwood Park - Redbank"</b> are also projected to undergo substantial greenfield residential growth.</p>			
+			<p>By 2041, the population of Greater Montreal area is expected to reach approximately <b>5.16 million</b>.</p>					
+			<p>The forecast indicates substantial population growth in <b>Montreal</b>, and <b>Monteregie</b>, both experiencing growth exceeding 250,000 residents. </p>			
+			<img src="assets/img/chapters/mon_pop41.png" width = "150"></div>					
 			`,
             location: {
                 center: [-73.616796, 45.629307],
@@ -1799,12 +1955,8 @@ var config = {
             id: 'section-30',
 			title: 'Montreal Population Growth Forecast 2021-2041',
             description: `
-			<p>Brisbane demonstrates the most consistent growth among major Australian cities, with minimal fluctuations in its forecasts, suggesting a resilient response to the pandemic.</p>
-			<p>Current projections estimate Brisbane's population will rise from approximately <b>3.78m in 2021</b> to <b>5.36m by 2041</b>, an increase of <b>1.57m residents</b>.</p>
-			<img src="assets/img/chapters/qld_pop.svg" width = "500"></div>
-			<p>This growth aligns closely with previous DAE forecasts, indicating stable and predictable development trends.</p>
-			<img src="assets/img/chapters/pop.svg" width = "200"></div>
-			<p>For detailed information on key development hubs within South East Queensland, please refer to <a href="https://planning.statedevelopment.qld.gov.au/__data/assets/pdf_file/0019/83242/seq-regional-plan-shapingseq-update-2023-high-res.pdf"> Shaping SEQ</a> document.</p>
+			<p>Current projections estimate that the population of the Greater Montreal Area will increase from approximately <b>4.50 million in 2021</b> to <b>5.16 million by 2041</b>, indicating a growth of <b>0.87</b> million residents. "<b>Montreal</b>" is expected to have an annual growth rate of <b>0.7%</b>, while "<b>Monteregie</b>" indicates a growth of <b>1.0%</b>. </p>
+			<img src="assets/img/chapters/mon_pgrowth.png" width = "160"></div>			
 			`,
             location: {
                 center: [-73.616796, 45.629307],
@@ -1886,10 +2038,43 @@ var config = {
             id: 'section-31',
             title: '2021 Montreal Employment Overview',					
             description: `
-			<p>In 2021, the population of South East Queensland (SEQ) reached <b>3.78 million</b>.</p>
-			<p>The population distribution at the SA2 level within SEQ in 2021 was relatively balanced. This uniformity is attributed to the  <a href="https://www.abs.gov.au/census/guide-census-data/geography/census-geography-glossary#:~:text=Statistical%20Area%20Level%202%20(SA2),-Statistical%20Areas%20Level&text=They%20generally%20have%20a%20population,and%20catchments%20of%20rural%20areas.">SA2 boundaries being designed to encompass populations ranging from 3,000 to 25,000.</a>.</p>
-			<p> For a more detailed breakdown, users are encouraged to consult the <a href="https://tableau.transurban.com/#/site/StrategyandAnalysis/workbooks/4201/views.">Sep23 DAE commission forecast</a>, which offers an in-depth view of Brisbane's population distribution.</p>
-			<img src="assets/img/chapters/pop21.svg" width = "200"></div>			
+			<p>In 2021, the employment of Montreal modelling area reached <b>2.21 million</b>.</p>
+			
+			<table border="1">
+			<tr>
+			<th style="text-align: left; font-weight: bold;">ER</th>
+			<th style="text-align: left; font-weight: bold;">Employment</th>
+			</tr>
+			
+			<tr>
+			<td  style="text-align: left;">Montreal</td >
+			<td  style="text-align: left;">1,407,102</td >
+			</tr>
+			
+			<tr>
+			<td  style="text-align: left;">Monteregie</td >
+			<td  style="text-align: left;">474,162</td >
+			</tr>
+			
+			<tr>
+			<td  style="text-align: left;">Laval</td >
+			<td  style="text-align: left;">182,366</td >
+			</tr>
+			
+			<tr>
+			<td  style="text-align: left;">Laurentides</td >
+			<td  style="text-align: left;">172,736</td >
+			</tr>
+			
+			<tr>
+			<td  style="text-align: left;">Lanaudiere</td >
+			<td  style="text-align: left;">94,589</td >
+			</tr>				
+			
+			</table>
+			
+			<p>The employment of "<b>Montreal</b>" surpasses one million, "Monteregie" has an employment of around half a million, while the other three Economic Regions (ERs) are all less than 200,000. </p>
+			<img src="assets/img/chapters/mon_emp21.png" width = "150"></div>			
 			`,
 			location: {
                 center: [-73.616796, 45.629307],
@@ -1972,10 +2157,9 @@ var config = {
 			title: '2041 Montreal Employment Forecast',
             description: 
 			`
-			<p>By 2041, the population of South East Queensland (SEQ) is expected to reach approximately <b>5.36 million</b>.</p>
-			<p>The 2041 forecast highlights significant growth in specific areas: Ipswich, espetially <a href="https://www.statedevelopment.qld.gov.au/__data/assets/pdf_file/0019/12448/ripley-valley-development-scheme.pdf"> Ripley Valley</a>, Logan, especially <a href= "https://ehq-production-australia.s3.ap-southeast-2.amazonaws.com/626be8a07ab1dff7a6527537ebd4c6d9dd2269ed/documents/attachments/000/096/927/original/Draft_Park_Ridge_South_Chambers_Flat_Plan_Consultation_Booklet.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4KKNQAKIOR7VAOP4%2F20240411%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20240411T105608Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=a4b6fc4942130f0de86bd12f9daf0e4da0ec384efd3b2f531edce52b10d720b6"> Park Ridge and Chambers Flat</a>, along with <a href="https://communities.lendlease.com/contentassets/c60d7ad02f5e4358aadc17100206c06c/yar_mp_230322web_3-page.pdf"> Yarrabilba </a>, and in <a href="https://www.moretonbay.qld.gov.au/files/assets/public/v/1/services/building-development/mbrc-plan/background-studies/cabwest-structure-plan-summary.pdf"> Calboolture West</a>, which are all earmarked for extensive greenfield residential developments.</p> 
-			<img src="assets/img/chapters/pop41.svg" width = "200" height = "200"></div>
-			<p>Within the Brisbane Local Government Area (LGA), several SA2s such as <b>"Rochedale"</b>, <b>"Pallara - Willawong"</b> and <b>"Collingwood Park - Redbank"</b> are also projected to undergo substantial greenfield residential growth.</p>			
+			<p>By 2041, the employment of Greater Montreal area is expected to reach approximately <b>2.64 million</b>.</p>					
+			<p>The forecast indicates substantial employment growth in <b>Montreal</b> experiencing growth exceeding 250,000, followed by "<b>Monteregie</b>" with a growth of approximate 79,000 jobs. </p>	
+			<img src="assets/img/chapters/mon_emp41.png" width = "150"></div>					
 			`,
             location: {
                 center: [-73.616796, 45.629307],
@@ -2057,12 +2241,8 @@ var config = {
             id: 'section-33',
 			title: 'Montreal Employment Growth Forecast 2021-2041',
             description: `
-			<p>Brisbane demonstrates the most consistent growth among major Australian cities, with minimal fluctuations in its forecasts, suggesting a resilient response to the pandemic.</p>
-			<p>Current projections estimate Brisbane's population will rise from approximately <b>3.78m in 2021</b> to <b>5.36m by 2041</b>, an increase of <b>1.57m residents</b>.</p>
-			<img src="assets/img/chapters/qld_pop.svg" width = "500"></div>
-			<p>This growth aligns closely with previous DAE forecasts, indicating stable and predictable development trends.</p>
-			<img src="assets/img/chapters/pop.svg" width = "200"></div>
-			<p>For detailed information on key development hubs within South East Queensland, please refer to <a href="https://planning.statedevelopment.qld.gov.au/__data/assets/pdf_file/0019/83242/seq-regional-plan-shapingseq-update-2023-high-res.pdf"> Shaping SEQ</a> document.</p>
+			<p>Current projections estimate that the employment of the Greater Montreal Area will increase from approximately <b>2.20 million in 2021</b> to <b>2.64 million by 2041</b>, indicating a growth of <b>0.43</b> million employment. "<b>Montreal</b>" is expected to have an annual growth rate of <b>1.0%</b>, while "<b>Monteregie</b>" indicates a growth of <b>0.8%</b>. </p>
+			<img src="assets/img/chapters/mon_egrowth.png" width = "160"></div>			
 			`,
             location: {
                 center: [-73.616796, 45.629307],
@@ -2139,58 +2319,6 @@ var config = {
             ,
             onChapterExit: [   				     
             ],          
-        },
-		{
-            id: 'section-34',
-			title: 'Summary',
-			description: `
-			<p>In conclusion, Sydney's growth is predominantly in the West, Brisbane's in the South, and Melbourne experiences city-wide expansion. Brisbane's growth pattern is distinct, characterized by less infill development and more greenfield expansion on the outskirts, reflecting the city's higher reliance on cars, lower public transport utilization, and the allure of lifestyle assets (beaches and bays) distant from the city center.</p>
-			<img src="assets/img/chapters/sa4_growth.svg" width = "500"></div>			
-			<p>Conversely, Sydney and Melbourne are poised for substantial infill development in their middle suburbs. This trend leverages their robust public transport systems, urban-centric lifestyle amenities, and a more entrenched acceptance of denser living environments.</p>			
-			`,
-            location: {
-                center: [150.9, -33.86],
-                zoom: 10.5,
-                pitch: 0,
-                bearing: 0,
-				speed: 0.8
-            },   
-			mapAnimation: 'flyTo',
-			rotateAnimation: false,
-			callback: '',	
-			onChapterEnter: [      
-				{
-                    layer: 'pop_growth',
-                    opacity: 0
-                },
-                {
-                    layer: 'emp_growth',
-                    opacity: 0
-                },	
-				{
-                    layer: 'pop21',
-                    opacity: 0
-                },
-                {
-                    layer: 'pop41',
-                    opacity: 0
-                },	
-				{
-                    layer: 'emp21',
-                    opacity: 0
-                },
-                {
-                    layer: 'emp41',
-                    opacity: 0
-                },	
-				{
-                    layer: 'sa2',
-                    opacity: 1
-                }			
-            ]
-            ,
-            onChapterExit: [   				     
-            ],          
-        }, 
+        },		
     ],
 };
